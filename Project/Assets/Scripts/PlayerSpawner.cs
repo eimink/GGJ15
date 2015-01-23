@@ -33,12 +33,10 @@ public class PlayerSpawner : MonoBehaviour {
 				Vector3 spawnPos = spawns[i].GetComponent<Transform>().position;
 				if( i%2 == 0 )
 				{
-					Debug.Log("Spawning player 1");
 					GameObject.Instantiate(player1Prefab,spawnPos,Quaternion.identity);
 				}
 				else
 				{
-					Debug.Log("Spawning player 2");
 					GameObject.Instantiate(player2Prefab,spawnPos,Quaternion.identity);
 				}
 			}
