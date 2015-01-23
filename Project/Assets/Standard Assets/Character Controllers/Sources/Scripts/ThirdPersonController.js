@@ -313,10 +313,10 @@ function Update() {
 	ApplyGravity ();
 
 	// Apply jumping logic
-	ApplyJumping ();
+	//ApplyJumping ();
 	
 	// Calculate actual motion
-	var movement = moveDirection * moveSpeed + Vector3 (0, verticalSpeed, 0) + inAirVelocity;
+	var movement = moveDirection * moveSpeed + Vector3 (0, verticalSpeed, 0) ;//+ inAirVelocity;
 	movement *= Time.deltaTime;
 	
 	// Move the controller
@@ -371,12 +371,12 @@ function Update() {
 	}	
 	else
 	{
-		var xzMove = movement;
+	/*	var xzMove = movement;
 		xzMove.y = 0;
 		if (xzMove.sqrMagnitude > 0.001)
 		{
 			transform.rotation = Quaternion.LookRotation(xzMove);
-		}
+		}*/
 	}	
 	
 	// We are in jump mode but just became grounded
