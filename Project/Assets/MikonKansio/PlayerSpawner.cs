@@ -31,7 +31,14 @@ public class PlayerSpawner : MonoBehaviour {
 			for(int i=0; i<spawns.Length; ++i )
 			{
 				Vector3 spawnPos = spawns[i].GetComponent<Transform>().position;
-				GameObject.Instantiate(player1Prefab,spawnPos,Quaternion.identity);
+				if( i%2 == 0 )
+				{
+					GameObject.Instantiate(player1Prefab,spawnPos,Quaternion.identity);
+				}
+				else
+				{
+					GameObject.Instantiate(player2Prefab,spawnPos,Quaternion.identity);
+				}
 			}
 		}
 	}
