@@ -1,0 +1,7 @@
+-Bitmap generaattori ei palvele peliss‰ mit‰‰n tarkoitusta. Isompia bitmappeja ei tee Erkkik‰‰n pikseli kerrallaan. Random generated terrain on varmaan parempi ratkaisu.
+-Energiapalkit pelihahmoille
+-Parannus -efekti samalla tavalla kuin pommi
+	-Matti tekee t‰h‰n partikkelit
+- Turretti, joka ampuu alueelleen tulevia (omia ja vihollisia) elinik‰ns‰ ajan
+- Muurin rakentaminen voisi olla 4. kyky. Toimii niin, ett‰ kun nappia painetaan, hahmo luo omalle gridipaikalleen muuripalikan
+	-muuripalikoita voi tuhota turretilla (jos j‰‰ pelaajan ja turretin v‰liin) tai pommilla.
