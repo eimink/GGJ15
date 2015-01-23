@@ -42,6 +42,8 @@ public class PlayerSpawner : MonoBehaviour {
 					GameObject.Instantiate(player2Prefab,spawnPos,Quaternion.identity);
 				}
 			}
+
+			enabled = false;
 		}
 	}
 }
