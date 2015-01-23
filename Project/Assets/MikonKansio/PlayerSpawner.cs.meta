@@ -3,8 +3,8 @@ guid: 0d744e9a481043245b8f380684e1f46f
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - player1Prefab: {fileID: 100002, guid: 095d7b35332225f44805da410821a011, type: 2}
-  - player2Prefab: {fileID: 100002, guid: 095d7b35332225f44805da410821a011, type: 2}
+  - player1Prefab: {fileID: 100002, guid: 4b1204f05e43c3d439acd0fc4a901a0b, type: 2}
+  - player2Prefab: {fileID: 100002, guid: b227592c74fb6fc47afefc7f84cb9e57, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

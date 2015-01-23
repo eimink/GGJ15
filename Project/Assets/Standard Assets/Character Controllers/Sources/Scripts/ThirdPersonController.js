@@ -122,7 +122,12 @@ public var jumpPoseAnimation : AnimationClip;
 		_animation = null;
 		Debug.Log("No jump animation found and the character has canJump enabled. Turning off animations.");
 	}
-			
+
+
+//Debug.Log("Sett pid: " + playerNum.ToString());
+//	var player = GetComponent("PlayerCharacterController") as PlayerCharacterController;
+//	player.SetPlayerId(playerNum);
+	SendMessage("SetPlayerId", playerNum, SendMessageOptions.DontRequireReceiver);
 }
 
 function getPlayerInputAxis(axis : String)
