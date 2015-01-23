@@ -51,7 +51,7 @@
      <Compile Include="Assets\PlayerCharacterController.cs" />
      <Compile Include="Assets\Utilities\GeneratorBlock.cs" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/mikkor/Documents/GitHub/GGJ15/Project/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/AnttiS/Desktop/GGJ15/Project/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

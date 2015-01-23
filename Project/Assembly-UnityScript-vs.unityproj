@@ -48,7 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\Joystick.js" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Kurssi1/Documents/GitHub/GGJ15/Project/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/AnttiS/Desktop/GGJ15/Project/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
