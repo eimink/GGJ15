@@ -47,8 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\LevelGenerator\LevelGenerator.cs" />
-     <Compile Include="Assets\MikonKansio\PlayerSpawner.cs" />
-     <Compile Include="Assets\PlayerCharacterController.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacterController.cs" />
+     <Compile Include="Assets\Scripts\PlayerSpawner.cs" />
+     <Compile Include="Assets\Scripts\TimeBomb.cs" />
      <Compile Include="Assets\Utilities\GeneratorBlock.cs" />
   </ItemGroup>
   <ItemGroup>
