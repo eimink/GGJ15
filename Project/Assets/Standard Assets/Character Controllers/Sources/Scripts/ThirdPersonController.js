@@ -13,6 +13,8 @@ public var runMaxAnimationSpeed : float = 1.0;
 public var jumpAnimationSpeed : float = 1.15;
 public var landAnimationSpeed : float = 1.0;
 
+public var playerNum : int = 1;
+
 private var _animation : Animation;
 
 enum CharacterState {
@@ -123,6 +125,10 @@ public var jumpPoseAnimation : AnimationClip;
 			
 }
 
+function getPlayerInputAxis(axis : String)
+{
+	return "P" + playerNum.ToString() + "_" + axis;
+}
 
 function UpdateSmoothedMovementDirection ()
 {
@@ -138,8 +144,8 @@ function UpdateSmoothedMovementDirection ()
 	// Always orthogonal to the forward vector
 	var right = Vector3(forward.z, 0, -forward.x);
 
-	var v = Input.GetAxisRaw("Vertical");
-	var h = Input.GetAxisRaw("Horizontal");
+	var v = Input.GetAxisRaw(getPlayerInputAxis("Vertical"));
+	var h = Input.GetAxisRaw(getPlayerInputAxis("Horizontal"));
 
 	// Are we moving backwards or looking backwards
 	if (v < -0.2)
@@ -251,8 +257,8 @@ function ApplyGravity ()
 	if (isControllable)	// don't move player at all if not controllable.
 	{
 		// Apply gravity
-		var jumpButton = Input.GetButton("Jump");
-		
+		//var jumpButton = Input.GetButton("Jump");
+	
 		
 		// When we reach the apex of the jump we send out a message
 		if (jumping && !jumpingReachedApex && verticalSpeed <= 0.0)
@@ -294,10 +300,10 @@ function Update() {
 		Input.ResetInputAxes();
 	}
 
-	if (Input.GetButtonDown ("Jump"))
+	/*if (Input.GetButtonDown ("Jump"))
 	{
 		lastJumpButtonTime = Time.time;
-	}
+	}*/
 
 	UpdateSmoothedMovementDirection();
 	
@@ -420,7 +426,7 @@ function GetLockCameraTimer ()
 
 function IsMoving ()  : boolean
 {
-	return Mathf.Abs(Input.GetAxisRaw("Vertical")) + Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0.5;
+	return Mathf.Abs(Input.GetAxisRaw(getPlayerInputAxis("Vertical"))) + Mathf.Abs(Input.GetAxisRaw(getPlayerInputAxis("Horizontal"))) > 0.5;
 }
 
 function HasJumpReachedApex ()
