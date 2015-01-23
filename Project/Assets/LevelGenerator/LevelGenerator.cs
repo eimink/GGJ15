@@ -3,12 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class LevelGenerator : MonoBehaviour {
-	
-	public GeneratorBlock[] Blocks;
+
+	public Color spawnColor;
+	public GeneratorBlock[] blocks;
 	public Texture2D testBitmap;
+	public bool Ready {get{return m_ready;}}
+
+	GameObject m_levelParent;
+	bool m_ready = false;
 
 	// Use this for initialization
 	void Start () {
+		m_ready = false;
+		m_levelParent = new GameObject ();
+		m_levelParent.name = "GeneratedLevel";
 		GenerateLevelFromBitmap (testBitmap);
 	}
 	
@@ -26,19 +34,24 @@ public class LevelGenerator : MonoBehaviour {
 		{
 			for (int j = 0; j < height; j++)
 			{
-
 				int idx = FindBlockIndex(pixels[i*width+j]);
 				if (idx >= 0)
-					Instantiate(Blocks[idx].prefab,new Vector3(i,0,j),Quaternion.identity);
+				{
+					GameObject o = (GameObject)Instantiate(blocks[idx].prefab,new Vector3(i,0,j),Quaternion.identity);
+					o.transform.parent = m_levelParent.transform;
+					if (pixels[i*width+j] == spawnColor)
+						o.tag = "SpawnPoint";
+				}
 			}
 		}
+		m_ready = true;
 	}
 
 	int FindBlockIndex(Color c)
 	{
-		for (int i = 0; i < Blocks.Length; i++) 
+		for (int i = 0; i < blocks.Length; i++) 
 		{
-			if (Blocks [i].key == c)
+			if (blocks [i].key == c)
 			{
 				return i;
 			}
