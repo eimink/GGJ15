@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class LevelGenerator : MonoBehaviour {
-
-	public Dictionary<Color, GameObject> BlockDefinitions;
+	
+	public GeneratorBlock[] Blocks;
 	public Texture2D testBitmap;
 
 	// Use this for initialization
@@ -22,15 +22,27 @@ public class LevelGenerator : MonoBehaviour {
 		Color[] pixels = bitmap.GetPixels();
 		int width = bitmap.width;
 		int height = bitmap.height;
-		GameObject g;
 		for (int i = 0; i < width; i++)
 		{
 			for (int j = 0; j < height; j++)
 			{
-				BlockDefinitions.TryGetValue((Color)pixels.GetValue(i*width+j), out g);
-				if (g != null)
-					Instantiate((Object)g,new Vector3(i,0,j),Quaternion.identity);
+
+				int idx = FindBlockIndex(pixels[i*width+j]);
+				if (idx >= 0)
+					Instantiate(Blocks[idx].prefab,new Vector3(i,0,j),Quaternion.identity);
 			}
 		}
+	}
+
+	int FindBlockIndex(Color c)
+	{
+		for (int i = 0; i < Blocks.Length; i++) 
+		{
+			if (Blocks [i].key == c)
+			{
+				return i;
+			}
+		}
+		return -1;
 	}
 }
