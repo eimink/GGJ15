@@ -15,6 +15,7 @@ public class TimeBomb : MonoBehaviour {
 
 	void Explode()
 	{
+		this.gameObject.GetComponent<ParticleSystem>().Play();
 		RaycastHit[] hits = Physics.SphereCastAll (transform.position, explosionRadius, transform.forward);
 		foreach (RaycastHit hit in hits)
 		{
