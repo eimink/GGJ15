@@ -1,12 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LevelGenerator\RandomLevelGenerator.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DeleteLater.cs">
     <Files>
-      <File FileName="Assets\Utilities\GeneratorBlock.cs" Line="1" Column="1" />
-      <File FileName="Assets\Utilities\PerlinGenerator.cs" Line="1" Column="1" />
-      <File FileName="Assets\LevelGenerator\RandomLevelGenerator.cs" Line="99" Column="54" />
-      <File FileName="Assets\LevelGenerator\LevelGenerator.cs" Line="22" Column="19" />
-      <File FileName="Assets\Scripts\PlayerSpawner.cs" Line="8" Column="2" />
+      <File FileName="Assets\Scripts\TimeBomb.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Energy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TimeBomb.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HealBox.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ThirdPersonController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerCharacterController.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\mikkor\Documents\GitHub\GGJ15\Project\Assets\Utilities\PerlinGenerator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DeleteLater.cs" Line="13" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

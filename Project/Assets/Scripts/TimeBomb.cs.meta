@@ -4,6 +4,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - smudgePrefab: {fileID: 100002, guid: d263c14ce22a7ed48985682d8eb881b6, type: 2}
+  - smokePrefab: {fileID: 100000, guid: 9215b4bd9f99f50419ea17b16b8a52aa, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

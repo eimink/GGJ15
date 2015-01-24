@@ -16,6 +16,7 @@ public class TimeBomb : MonoBehaviour {
 	Light light;
 
 	public GameObject smudgePrefab;
+	public GameObject smokePrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -52,7 +53,12 @@ public class TimeBomb : MonoBehaviour {
 	void Explode()
 	{
 		exploding = true;
-		this.gameObject.GetComponentInChildren<ParticleSystem>().Play();
+
+		ParticleSystem [] particles = this.gameObject.GetComponentsInChildren<ParticleSystem> ();//.Play();
+		foreach (ParticleSystem p in particles)
+			p.Play ();
+
+		//this.gameObject.GetComponentInChildren<ParticleSystem>().Play();
 		GameObject bm = GetComponent<Transform>().FindChild("Bomb_model").gameObject;
 		bm.SetActive (false);
 
@@ -67,6 +73,8 @@ public class TimeBomb : MonoBehaviour {
 
 		Quaternion r = Quaternion.Euler(new Vector3(0.0f,UnityEngine.Random.value*360.0f,0.0f));
 		GameObject smudge = GameObject.Instantiate(smudgePrefab,GetComponent<Transform>().position,r) as GameObject;
+		
+		GameObject.Instantiate(smokePrefab, GetComponent<Transform>().position, Quaternion.identity);
 		float scaleVal = 0.7f + UnityEngine.Random.value * 0.6f;
 		smudge.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale * scaleVal;
 

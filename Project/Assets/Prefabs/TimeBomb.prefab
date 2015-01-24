@@ -91,7 +91,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.8499985, y: 0, z: -.0291567296}
+  m_LocalPosition: {x: -5.96046448e-08, y: 0, z: -.0291567296}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -269,6 +269,7 @@ MonoBehaviour:
   distanceFalloff: .100000001
   explosionTime: .5
   smudgePrefab: {fileID: 100002, guid: d263c14ce22a7ed48985682d8eb881b6, type: 2}
+  smokePrefab: {fileID: 100000, guid: 9215b4bd9f99f50419ea17b16b8a52aa, type: 2}
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1
