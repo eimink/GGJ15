@@ -69,11 +69,11 @@ public class RandomLevelGenerator : LevelGenerator {
 		{
 			for (int j = 1; j < spawnsPerPlayer+1; j++)
 			{
-				Vector2 point = GetPoint(i+j);
+				Vector2 point = GetPoint((i+j)%4);
 				Color pixel = tex.GetPixel((int)point.x,(int)point.y);
 				while(pixel != floorColor)
 				{
-					point = GetPoint(1+i+j);
+					point = GetPoint((i+j)%4);
 					pixel = tex.GetPixel((int)point.x,(int)point.y);
 				}
 				tex.SetPixel((int)point.x,(int)point.y,spawnColor);
