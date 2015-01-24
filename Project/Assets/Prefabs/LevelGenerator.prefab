@@ -8,8 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: LevelGenerator
   m_TagString: Untagged
@@ -37,7 +37,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1f0da0b41ab2ef43b7794ed1f2f7d22, type: 3}
+  m_Script: {fileID: 11500000, guid: d953422055af65a42bcb4548f50c1832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnColor: {r: 1, g: 0, b: 0, a: 1}

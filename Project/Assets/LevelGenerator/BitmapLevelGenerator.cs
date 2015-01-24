@@ -6,10 +6,8 @@ public class BitmapLevelGenerator : LevelGenerator {
 
 	public Texture2D testBitmap;
 
-	GameObject m_levelParent;
-	bool m_ready = false;
-	
 	void Start () {
+		Init();
 		GenerateLevelFromBitmap (testBitmap);
 	}
 }
