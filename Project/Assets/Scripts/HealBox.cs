@@ -19,13 +19,11 @@ public class HealBox : MonoBehaviour {
 	void Heal()
 	{
 		this.gameObject.GetComponent<ParticleSystem>().Play();
-		RaycastHit[] hits = Physics.SphereCastAll (transform.position, explosionRadius, transform.forward);
+		RaycastHit[] hits = Physics.SphereCastAll (transform.position, healRadius, transform.forward);
 		foreach (RaycastHit hit in hits)
 		{
-			float dmg = maxDamage - hit.distance * distanceFalloff;
-			hit.collider.gameObject.SendMessage("ApplyDamage",dmg,SendMessageOptions.DontRequireReceiver);
-			if (hit.rigidbody != null)
-				hit.rigidbody.AddExplosionForce(explosionForce,transform.position,explosionRadius);
+			float h = healAmountPerTick - hit.distance * distanceFalloff;
+			hit.collider.gameObject.SendMessage("Heal",h,SendMessageOptions.DontRequireReceiver);
 		}
 	}
 
