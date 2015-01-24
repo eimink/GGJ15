@@ -6,6 +6,8 @@ public class LevelGenerator : MonoBehaviour {
 
 	public Color spawnColor;
 	public GeneratorBlock[] blocks;
+	public GameObject floorTile;
+	public Color floorColor;
 	public bool Ready {get{return m_ready;}}
 
 	GameObject m_levelParent;
@@ -36,14 +38,25 @@ public class LevelGenerator : MonoBehaviour {
 		{
 			for (int j = 0; j < height; j++)
 			{
-				Debug.Log(pixels[i*width + j]);
 				int idx = FindBlockIndex(pixels[i*width+j]);
-				if (idx >= 0)
+				if (i == 0 || j == 0 || i == width-1 || j == height-1)
+				{
+					GameObject o = (GameObject)Instantiate(blocks[0].prefab,new Vector3(i,0,j),Quaternion.identity);
+					o.transform.parent = m_levelParent.transform;
+				}
+				else if (idx >= 0)
 				{
 					GameObject o = (GameObject)Instantiate(blocks[idx].prefab,new Vector3(i,0,j),Quaternion.identity);
 					o.transform.parent = m_levelParent.transform;
 					if (pixels[i*width+j] == spawnColor)
+					{
 						o.tag = "SpawnPoint";
+					}
+				}
+				else
+				{
+					GameObject o = (GameObject)Instantiate(floorTile,new Vector3(i,0,j),Quaternion.identity);
+					o.transform.parent = m_levelParent.transform;
 				}
 			}
 		}

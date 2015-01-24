@@ -1,12 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public static class PerlinGenerator {
-
-	public static Texture2D CreatePerlinTexture(int width, int height, int xOrg = 0, int yOrg = 0, float scale = 1.0f)
-	{
-		Texture2D noiseTex = new Texture2D (width, height);
-		Color[] pix = new Color[noiseTex.width * noiseTex.height];
+public class Perlin : MonoBehaviour {
+	public int pixWidth;
+	public int pixHeight;
+	public float xOrg;
+	public float yOrg;
+	public float scale = 1.0F;
+	private Texture2D noiseTex;
+	private Color[] pix;
+	void Start() {
+		noiseTex = new Texture2D(pixWidth, pixHeight);
+		pix = new Color[noiseTex.width * noiseTex.height];
+		renderer.material.mainTexture = noiseTex;
+	}
+	void CalcNoise() {
 		float y = 0.0F;
 		while (y < noiseTex.height) {
 			float x = 0.0F;
@@ -20,6 +28,9 @@ public static class PerlinGenerator {
 			y++;
 		}
 		noiseTex.SetPixels(pix);
-		return noiseTex;
+		noiseTex.Apply();
+	}
+	void Update() {
+		CalcNoise();
 	}
 }
