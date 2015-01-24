@@ -11,6 +11,7 @@ public class RandomLevelGenerator : LevelGenerator {
 	public int yOrg = 0;
 	public float scale = 1.0f;
 	public float darkTreshold = 0.3f;
+	public float midTreshold = 0.5f;
 	public float lightTreshold = 0.7f;
 
 	bool m_started = false;
@@ -52,9 +53,9 @@ public class RandomLevelGenerator : LevelGenerator {
 		for (int i = 0; i < pixels.Length; i++)
 		{
 			Color c = pixels[i];
-			c.r = c.r <= darkTreshold ? 0f : c.r >= lightTreshold ? 1f : c.r;
-			c.g = c.g <= darkTreshold ? 0f : c.g >= lightTreshold ? 1f : c.g;
-			c.b = c.b <= darkTreshold ? 0f : c.b >= lightTreshold ? 1f : c.b;
+			c.r = c.r <= darkTreshold ? 0f : c.r >= lightTreshold ? 1f : c.r <= midTreshold ? 0.4f : 0.6f;
+			c.g = c.g <= darkTreshold ? 0f : c.g >= lightTreshold ? 1f : c.g <= midTreshold ? 0.4f : 0.6f;
+			c.b = c.b <= darkTreshold ? 0f : c.b >= lightTreshold ? 1f : c.b <= midTreshold ? 0.4f : 0.6f;
 			pixels[i] = c;
 		}
 		tex.SetPixels(pixels);

@@ -252,13 +252,17 @@ MonoBehaviour:
   spawnColor: {r: 1, g: 0, b: 0, a: 1}
   blocks:
   - key: {r: 1, g: 1, b: 1, a: 1}
-    prefab: {fileID: 100000, guid: c70cd72a242e77a4cb31dcfafa4dc4f8, type: 2}
+    prefab: {fileID: 100004, guid: 486d7c03efe6b9d49afe434a32209c96, type: 2}
   - key: {r: 0, g: 0, b: 0, a: 1}
     prefab: {fileID: 100000, guid: ea6d275e0942c9c43a8484f8860cf6e8, type: 2}
   - key: {r: 1, g: 0, b: 0, a: 1}
     prefab: {fileID: 100000, guid: ea6d275e0942c9c43a8484f8860cf6e8, type: 2}
   - key: {r: 0, g: 1, b: 0, a: 1}
     prefab: {fileID: 100000, guid: 2bb50f6030e911546a748edb6ea65af1, type: 2}
+  - key: {r: .400000006, g: .400000006, b: .400000006, a: 1}
+    prefab: {fileID: 100000, guid: c70cd72a242e77a4cb31dcfafa4dc4f8, type: 2}
+  - key: {r: .600000024, g: .600000024, b: .600000024, a: 1}
+    prefab: {fileID: 100002, guid: fe9f8cda789ddd54eaf8d796d4e88701, type: 2}
   floorTile: {fileID: 100000, guid: ea6d275e0942c9c43a8484f8860cf6e8, type: 2}
   floorColor: {r: 0, g: 0, b: 0, a: 1}
   spawnpoints: 8
@@ -267,8 +271,9 @@ MonoBehaviour:
   xOrg: 0
   yOrg: 0
   scale: 6
-  darkTreshold: .600000024
-  lightTreshold: .300000012
+  darkTreshold: .400000006
+  midTreshold: .600000024
+  lightTreshold: .800000012
 --- !u!4 &1096587747
 Transform:
   m_ObjectHideFlags: 0
