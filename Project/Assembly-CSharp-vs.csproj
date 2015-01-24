@@ -53,8 +53,10 @@
      <Compile Include="Assets\Scripts\PlayerCharacterController.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\PlayerSpawner.cs" />
+     <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonController.cs" />
      <Compile Include="Assets\Scripts\TimeBomb.cs" />
+     <Compile Include="Assets\Scripts\Turret.cs" />
      <Compile Include="Assets\Scripts\WallElement.cs" />
      <Compile Include="Assets\Utilities\GeneratorBlock.cs" />
      <Compile Include="Assets\XInputDotNet\Examples\XInputTestCS.cs" />
