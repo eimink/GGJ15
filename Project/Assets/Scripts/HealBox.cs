@@ -1,20 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TimeBomb : MonoBehaviour {
+public class HealBox : MonoBehaviour {
 
 	public float fuseDelay = 2.0f;
-	public float explosionRadius = 2.0f;
-	public float maxDamage = 10.0f;
-	public float explosionForce = 10.0f;
+	public float activityDuration = 2.0f;
+	public float timeBetweenTicks = 0.5f;
+	public float healRadius = 2.0f;
+	public float healAmountPerTick = 10.0f;
 	public float distanceFalloff = 2.0f;
 
 	// Use this for initialization
 	void Start () {
-		Invoke ("Explode", fuseDelay);
+		InvokeRepeating("Heal", fuseDelay, timeBetweenTicks);
+		Invoke("Destroy", activityDuration);
 	}
-
-	void Explode()
+	
+	void Heal()
 	{
 		this.gameObject.GetComponent<ParticleSystem>().Play();
 		RaycastHit[] hits = Physics.SphereCastAll (transform.position, explosionRadius, transform.forward);
@@ -25,6 +27,10 @@ public class TimeBomb : MonoBehaviour {
 			if (hit.rigidbody != null)
 				hit.rigidbody.AddExplosionForce(explosionForce,transform.position,explosionRadius);
 		}
-		Destroy(this.gameObject);
+	}
+
+	void Destroy()
+	{
+		Destroy (this.gameObject);
 	}
 }
