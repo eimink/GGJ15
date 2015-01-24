@@ -3,10 +3,10 @@ using System.Collections;
 using XInputDotNetPure;
 
 public class PlayerCharacterController : MonoBehaviour {
-	public GameObject action1Prefab;
-	public GameObject action2Prefab;
-	public GameObject action3Prefab;
-	public GameObject action4Prefab;
+	//public GameObject action1Prefab;
+	public GameObject actionBPrefab;
+	public GameObject actionXPrefab;
+	public GameObject actionYPrefab;
 
 	public float cooldownTime = 1.0f;
 
@@ -70,31 +70,29 @@ public class PlayerCharacterController : MonoBehaviour {
 		{
 			if (input.GetPlayerInputAxis("Fire1"))
 			{
-				Instantiate (action1Prefab, GetComponent<Transform> ().position, Quaternion.identity);
-				canDoAction = false;
-				Invoke ("ActivateAction", cooldownTime); 
-
+				// hyppy
+				GetComponent<ThirdPersonController>().Jump();
 			}
 
 			if (input.GetPlayerInputAxis("Fire2") )
 			{
-				Instantiate (action2Prefab, GetComponent<Transform> ().position, Quaternion.identity);
+				Instantiate (actionBPrefab, GetComponent<Transform> ().position, Quaternion.identity);
 				canDoAction = false;
 				Invoke ("ActivateAction", cooldownTime); 
-				
 			}
 			if (input.GetPlayerInputAxis("Fire3"))
 			{
-				Instantiate (action3Prefab, GetComponent<Transform> ().position, Quaternion.identity);
+				// pommi = x
+				Instantiate (actionXPrefab, GetComponent<Transform> ().position, Quaternion.identity);
 				canDoAction = false;
-				Invoke ("ActivateAction", cooldownTime);	
+				Invoke ("ActivateAction", cooldownTime);
 			}
 			if (input.GetPlayerInputAxis("Fire4") )
 			{
-				Instantiate (action4Prefab, GetComponent<Transform> ().position, Quaternion.identity);
+				// turretti = y
+				Instantiate (actionYPrefab, GetComponent<Transform> ().position, Quaternion.identity);
 				canDoAction = false;
 				Invoke ("ActivateAction", cooldownTime); 
-				
 			}
 		}
 	}
