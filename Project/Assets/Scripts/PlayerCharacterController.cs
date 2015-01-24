@@ -60,7 +60,7 @@ public class PlayerCharacterController : MonoBehaviour {
 		}
 
 		friendlyObjects = GameObject.FindGameObjectsWithTag (gameObject.tag);
-		Debug.Log ("Found " + friendlyObjects.Length + " " + gameObject.tag + "s" );
+	//	Debug.Log ("Found " + friendlyObjects.Length + " " + gameObject.tag + "s" );
 	}
 	
 	// Update is called once per frame
