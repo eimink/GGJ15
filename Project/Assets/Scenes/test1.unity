@@ -134,7 +134,7 @@ Camera:
   far clip plane: 130
   field of view: 60
   orthographic: 1
-  orthographic size: 25
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -153,7 +153,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 884809475}
   m_LocalRotation: {x: .262395978, y: .366924465, z: -.108687982, w: .885833919}
-  m_LocalPosition: {x: -12, y: 40, z: -12}
+  m_LocalPosition: {x: -20, y: 40, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -262,8 +262,8 @@ MonoBehaviour:
   floorTile: {fileID: 100000, guid: ea6d275e0942c9c43a8484f8860cf6e8, type: 2}
   floorColor: {r: 0, g: 0, b: 0, a: 1}
   spawnpoints: 8
-  width: 64
-  height: 64
+  width: 48
+  height: 48
   xOrg: 0
   yOrg: 0
   scale: 6
