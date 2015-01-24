@@ -42,16 +42,21 @@ public class TimeBomb : MonoBehaviour {
 		light.enabled = false;
 	}
 
+	void LightOn()
+	{
+		light.enabled = true;
+	}
+
 	void Explode()
 	{
 		exploding = true;
 		this.gameObject.GetComponent<ParticleSystem>().Play();
 		GameObject bm = GetComponent<Transform>().FindChild("Bomb_model").gameObject;
 		bm.SetActive (false);
-		light.enabled = true;
 
 		timeSinceExplosion = 0.0f;
 		Invoke ("DisableDamage", explosionTime);
+		Invoke ("LightOn", explosionTime/8.0f);
 		Invoke ("LightOff", explosionTime/3.0f);
 		Invoke ("Destroy", explosionTime + 0.05f);
 

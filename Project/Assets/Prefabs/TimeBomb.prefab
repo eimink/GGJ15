@@ -199,7 +199,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: .909736335, b: .634191155, a: 1}
   m_Intensity: 1
-  m_Range: 20
+  m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -239,7 +239,7 @@ MonoBehaviour:
   maxDamage: 30
   explosionForce: 1000
   distanceFalloff: .100000001
-  explosionTime: .5
+  explosionTime: .400000006
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1
