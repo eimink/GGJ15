@@ -53,7 +53,7 @@ public class ThirdPersonController : MonoBehaviour {
 	
 	public bool canJump= true;
 	
-	private float jumpRepeatTime = 0.05F;
+	private float jumpRepeatTime = 2.5F;
 	private float jumpTimeout = 0.15F;
 	private float groundedTimeout = 0.25F;
 	
@@ -101,7 +101,7 @@ public class ThirdPersonController : MonoBehaviour {
 	void  Awake (){
 		moveDirection = transform.TransformDirection(Vector3.forward);
 		
-		_animation = GetComponent<Animation>();
+		_animation = GetComponentInChildren<Animation>();
 		if(!_animation)
 			Debug.Log("The character you would like to control doesn't have animations. Moving her might look weird.");
 		
@@ -119,14 +119,14 @@ public AnimationClip jumpPoseAnimation;
 			_animation = null;
 			Debug.Log("No walk animation found. Turning off animations.");
 		}
-		if(!runAnimation) {
+		/*if(!runAnimation) {
 			_animation = null;
 			Debug.Log("No run animation found. Turning off animations.");
 		}
 		if(!jumpPoseAnimation && canJump) {
 			_animation = null;
 			Debug.Log("No jump animation found and the character has canJump enabled. Turning off animations.");
-		}
+		}*/
 		
 	}
 	void  UpdateSmoothedMovementDirection (){
@@ -317,14 +317,17 @@ public AnimationClip jumpPoseAnimation;
 		if(_animation) {
 			if(_characterState == CharacterState.Jumping)
 			{
-				if(!jumpingReachedApex) {
-					_animation[jumpPoseAnimation.name].speed = jumpAnimationSpeed;
-					_animation[jumpPoseAnimation.name].wrapMode = WrapMode.ClampForever;
-					_animation.CrossFade(jumpPoseAnimation.name);
-				} else {
-					_animation[jumpPoseAnimation.name].speed = -landAnimationSpeed;
-					_animation[jumpPoseAnimation.name].wrapMode = WrapMode.ClampForever;
-					_animation.CrossFade(jumpPoseAnimation.name);              
+				if( jumpPoseAnimation )
+				{
+					if(!jumpingReachedApex) {
+						_animation[jumpPoseAnimation.name].speed = jumpAnimationSpeed;
+						_animation[jumpPoseAnimation.name].wrapMode = WrapMode.ClampForever;
+						_animation.CrossFade(jumpPoseAnimation.name);
+					} else {
+						_animation[jumpPoseAnimation.name].speed = -landAnimationSpeed;
+						_animation[jumpPoseAnimation.name].wrapMode = WrapMode.ClampForever;
+						_animation.CrossFade(jumpPoseAnimation.name);              
+					}
 				}
 			}
 			else

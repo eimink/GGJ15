@@ -92,7 +92,195 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|Idle2
+      takeName: Armature|Idle2
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|Root
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Tail1
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Tail1/Armature|Tail2
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Tail1/Armature|Tail2/Armature|Tail3
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Tail1/Armature|Tail2/Armature|Tail3/Armature|Tail4
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.L/Armature|Lowerleg.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.L/Armature|Lowerleg.L/Armature|Foot.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.L/Armature|Lowerleg.L/Armature|Foot.L/Armature|Toe.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.R/Armature|Lowerleg.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.R/Armature|Lowerleg.R/Armature|Foot.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.R/Armature|Lowerleg.R/Armature|Foot.R/Armature|Toe.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Neck
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Neck/Armature|Head
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.L/Armature|Upperarm.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.L/Armature|Upperarm.L/Armature|Lowerarm.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.L/Armature|Upperarm.L/Armature|Lowerarm.L/Armature|Hand.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.R/Armature|Upperarm.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.R/Armature|Upperarm.R/Armature|Lowerarm.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.R/Armature|Upperarm.R/Armature|Lowerarm.R/Armature|Hand.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Ik-leg.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Ik-leg.L/Armature|Knee.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Ik-leg.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Ik-leg.R/Armature|Knee.R
+        weight: 1
+      - path: Olio_model
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Run
+      takeName: Armature|Run
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Armature|Root
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Tail1
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Tail1/Armature|Tail2
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Tail1/Armature|Tail2/Armature|Tail3
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Tail1/Armature|Tail2/Armature|Tail3/Armature|Tail4
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.L/Armature|Lowerleg.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.L/Armature|Lowerleg.L/Armature|Foot.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.L/Armature|Lowerleg.L/Armature|Foot.L/Armature|Toe.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.R/Armature|Lowerleg.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.R/Armature|Lowerleg.R/Armature|Foot.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Pelvis/Armature|Thigh.R/Armature|Lowerleg.R/Armature|Foot.R/Armature|Toe.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Neck
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Neck/Armature|Head
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.L/Armature|Upperarm.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.L/Armature|Upperarm.L/Armature|Lowerarm.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.L/Armature|Upperarm.L/Armature|Lowerarm.L/Armature|Hand.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.R/Armature|Upperarm.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.R/Armature|Upperarm.R/Armature|Lowerarm.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Base/Armature|Stomach/Armature|Chest/Armature|Shoulder.R/Armature|Upperarm.R/Armature|Lowerarm.R/Armature|Hand.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Ik-leg.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Ik-leg.L/Armature|Knee.L
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Ik-leg.R
+        weight: 1
+      - path: Armature/Armature|Root/Armature|Ik-leg.R/Armature|Knee.R
+        weight: 1
+      - path: Olio_model
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

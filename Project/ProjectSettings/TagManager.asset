@@ -5,6 +5,10 @@ TagManager:
   tags:
   - SpawnPoint
   - 
+  - Player2
+  - Player1
+  - DestroyableWall
+  - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
   Builtin Layer 2: Ignore Raycast
