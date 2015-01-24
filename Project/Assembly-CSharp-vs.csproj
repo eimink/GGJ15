@@ -50,6 +50,7 @@
      <Compile Include="Assets\LevelGenerator\LevelGenerator.cs" />
      <Compile Include="Assets\LevelGenerator\RandomLevelGenerator.cs" />
      <Compile Include="Assets\Scripts\CharacterMotor.cs" />
+     <Compile Include="Assets\Scripts\Energy.cs" />
      <Compile Include="Assets\Scripts\EnergyBar.cs" />
      <Compile Include="Assets\Scripts\HealBox.cs" />
      <Compile Include="Assets\Scripts\PlayerCharacterController.cs" />
