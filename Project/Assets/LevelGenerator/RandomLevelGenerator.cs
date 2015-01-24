@@ -110,12 +110,12 @@ public class RandomLevelGenerator : LevelGenerator {
 	Vector2 GetPoint(int quadrant)
 	{
 		if (quadrant <= 1)
-			return new Vector2 (UnityEngine.Random.Range (1, width/4), UnityEngine.Random.Range (1, height/4));
+			return new Vector2 (UnityEngine.Random.Range (width/4, width/2), UnityEngine.Random.Range (height/4, height/2));
 		else if (quadrant == 2)
-			return new Vector2 (UnityEngine.Random.Range (3*width/4, width), UnityEngine.Random.Range (1, height/4));
+			return new Vector2 (UnityEngine.Random.Range (width/2, 3*width/4), UnityEngine.Random.Range (height/4, height/2));
 		else if (quadrant == 3)
-			return new Vector2 (UnityEngine.Random.Range (1, 3*width/4),UnityEngine.Random.Range (3*height/4, height));
+			return new Vector2 (UnityEngine.Random.Range (width/4, width/2),UnityEngine.Random.Range (height/2, 3*height/4));
 		else
-			return new Vector2 (UnityEngine.Random.Range (3*width/4, width),UnityEngine.Random.Range (3*height/4, height));
+			return new Vector2 (UnityEngine.Random.Range (width/2, 3*width/4),UnityEngine.Random.Range (height/2, 3*height/4));
 	}
 }
