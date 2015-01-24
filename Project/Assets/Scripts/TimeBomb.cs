@@ -50,14 +50,20 @@ public class TimeBomb : MonoBehaviour {
 	void Explode()
 	{
 		exploding = true;
-		this.gameObject.GetComponent<ParticleSystem>().Play();
+		this.gameObject.GetComponentInChildren<ParticleSystem>().Play();
 		GameObject bm = GetComponent<Transform>().FindChild("Bomb_model").gameObject;
 		bm.SetActive (false);
 
+		Quaternion rot = new Quaternion (UnityEngine.Random.value,UnityEngine.Random.value,UnityEngine.Random.value,UnityEngine.Random.value);
+
+		GetComponent<Transform> ().FindChild ("ExplosionSphere").rotation = rot;
+
+
 		timeSinceExplosion = 0.0f;
 		Invoke ("DisableDamage", explosionTime);
-		Invoke ("LightOn", explosionTime/8.0f);
-		Invoke ("LightOff", explosionTime/3.0f);
+		LightOn ();
+		//Invoke ("LightOn", explosionTime/8.0f);
+		//Invoke ("LightOff", explosionTime/3.0f);
 		Invoke ("Destroy", explosionTime + 0.05f);
 
 	}
@@ -76,13 +82,15 @@ public class TimeBomb : MonoBehaviour {
 		if (exploding)
 		{
 			timeSinceExplosion += Time.deltaTime;
-			float scale = 2.0f*explosionRadius*(/*explosionTime-*/timeSinceExplosion);
+			float scale = 1.0f + 2.0f*(explosionRadius-1.0f)*(/*explosionTime-*/timeSinceExplosion);
 
 			ApplyDamage ("Player1");
 			ApplyDamage ("Player2");
 			ApplyDamage ("DestroyableWall");
 
 			GetComponent<Transform>().FindChild("ExplosionSphere").localScale = new Vector3(scale,scale,scale);
+			light.gameObject.GetComponent<Transform>().Translate(new Vector3(0,scale,0));
+		//	light.range = scale;
 		}
 	}
 
