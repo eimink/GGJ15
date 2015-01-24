@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class HealBox : MonoBehaviour {
-
+	
 	public float fuseDelay = 2.0f;
 	public float activityDuration = 2.0f;
 	public float healRadius = 2.0f;
@@ -21,6 +21,9 @@ public class HealBox : MonoBehaviour {
 				objects[i].SendMessage("Heal",Time.deltaTime*dmg*healAmountPerSecond,SendMessageOptions.DontRequireReceiver);
 			}
 		}
+
+		
+		this.gameObject.GetComponent<AudioSource>().Play();
 	}
 
 	// Use this for initialization

@@ -58,6 +58,8 @@ public class TimeBomb : MonoBehaviour {
 		foreach (ParticleSystem p in particles)
 			p.Play ();
 
+		this.gameObject.GetComponent<AudioSource>().Play();
+
 		//this.gameObject.GetComponentInChildren<ParticleSystem>().Play();
 		GameObject bm = GetComponent<Transform>().FindChild("Bomb_model").gameObject;
 		bm.SetActive (false);
