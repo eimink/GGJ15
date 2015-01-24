@@ -13,11 +13,15 @@ public class LevelGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Init();
+	}
+
+	protected void Init() {
 		m_ready = false;
 		m_levelParent = new GameObject ();
 		m_levelParent.name = "GeneratedLevel";
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 	
@@ -32,6 +36,7 @@ public class LevelGenerator : MonoBehaviour {
 		{
 			for (int j = 0; j < height; j++)
 			{
+				Debug.Log(pixels[i*width + j]);
 				int idx = FindBlockIndex(pixels[i*width+j]);
 				if (idx >= 0)
 				{

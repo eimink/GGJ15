@@ -3,12 +3,18 @@ using System.Collections;
 
 public class Energy : MonoBehaviour {
 
-	public float maxEnergy = 10.0f;
+	public float maxEnergy = 100.0f;
 	private float curEnergy;
 
 	// Use this for initialization
 	void Start () {
 		curEnergy = maxEnergy;
+
+		TextMesh text = GetComponentInChildren<TextMesh> ();
+		if (text != null)
+		{
+			text.text = ((int)curEnergy).ToString();
+		}
 	}
 
 	void ApplyDamage( float dmg )
@@ -20,6 +26,12 @@ public class Energy : MonoBehaviour {
 		{
 			Debug.Log("Gameobject: " + gameObject.name + " killed");
 			Invoke ("Destroy", 0.1f);
+		}
+
+		TextMesh text = GetComponentInChildren<TextMesh> ();
+		if (text != null)
+		{
+			text.text = ((int)curEnergy).ToString();
 		}
 	}
 

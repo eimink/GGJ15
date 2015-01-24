@@ -42,10 +42,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuseDelay: 2
-  explosionRadius: 2
+  explosionRadius: 4
   maxDamage: 10
-  explosionForce: 10
-  distanceFalloff: 2
+  explosionForce: 1000
+  distanceFalloff: .100000001
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1

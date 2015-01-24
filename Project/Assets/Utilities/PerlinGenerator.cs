@@ -21,7 +21,7 @@ public static class PerlinGenerator {
 			}
 			y++;
 		}
-		noise.SetPixels(pixels);
+		noise.SetPixels (pixels);
 		return noise;
 	}
 

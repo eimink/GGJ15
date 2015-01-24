@@ -10,6 +10,7 @@ public class RandomLevelGenerator : LevelGenerator {
 	public float scale = 1.0f;
 	// Use this for initialization
 	void Start () {
+		Init();
 		GenerateLevelFromBitmap(PerlinGenerator.CreatePerlinTexture(width,height,xOrg,yOrg,scale));
 	}
 

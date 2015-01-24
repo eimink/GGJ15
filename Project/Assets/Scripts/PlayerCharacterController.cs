@@ -8,7 +8,7 @@ public class PlayerCharacterController : MonoBehaviour {
 	public GameObject action3Prefab;
 	public GameObject action4Prefab;
 
-	public float actionDelay = 2.0f;
+	public float cooldownTime = 1.0f;
 
 	bool canDoAction = true;
 
@@ -72,7 +72,7 @@ public class PlayerCharacterController : MonoBehaviour {
 			{
 				Instantiate (action1Prefab, GetComponent<Transform> ().position, Quaternion.identity);
 				canDoAction = false;
-				Invoke ("ActivateAction", actionDelay); 
+				Invoke ("ActivateAction", cooldownTime); 
 
 			}
 
@@ -80,21 +80,21 @@ public class PlayerCharacterController : MonoBehaviour {
 			{
 				Instantiate (action2Prefab, GetComponent<Transform> ().position, Quaternion.identity);
 				canDoAction = false;
-				Invoke ("ActivateAction", actionDelay); 
+				Invoke ("ActivateAction", cooldownTime); 
 				
 			}
 			if (input.GetPlayerInputAxis("Fire3"))
 			{
 				Instantiate (action3Prefab, GetComponent<Transform> ().position, Quaternion.identity);
 				canDoAction = false;
-				Invoke ("ActivateAction", actionDelay); 
+				Invoke ("ActivateAction", cooldownTime); 
 				
 			}
 			if (input.GetPlayerInputAxis("Fire4") )
 			{
 				Instantiate (action4Prefab, GetComponent<Transform> ().position, Quaternion.identity);
 				canDoAction = false;
-				Invoke ("ActivateAction", actionDelay); 
+				Invoke ("ActivateAction", cooldownTime); 
 				
 			}
 		}
