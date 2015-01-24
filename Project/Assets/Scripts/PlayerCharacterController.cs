@@ -14,9 +14,40 @@ public class PlayerCharacterController : MonoBehaviour {
 
 	private PlayerInput input;
 
+	GameObject [] friendlyObjects;
+
 	void ActivateAction()
 	{
 		canDoAction = true;
+	}
+
+	void DoTriggerAction(Collider other)
+	{
+		if (other.gameObject != gameObject && other.gameObject.tag == gameObject.tag)
+		{
+			SphereCollider thisSc = GetComponent<SphereCollider> ();
+			if (other.GetType().ToString() == "UnityEngine.SphereCollider" )
+			{
+				SphereCollider otherSc = (SphereCollider)other;
+				Vector3 delta = other.gameObject.GetComponent<Transform> ().position - gameObject.GetComponent<Transform> ().position;
+
+				float dLimit = thisSc.radius + otherSc.radius;
+				float f = 0.07f * (delta.magnitude - dLimit);
+			//	Debug.Log("f: " + f.ToString());
+				CharacterController controller = GetComponent<CharacterController> ();
+				controller.Move (f * delta.normalized);
+			}
+		}
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		DoTriggerAction (other);
+	}
+
+	void OnTriggerStay(Collider other) 
+	{
+		DoTriggerAction (other);
 	}
 
 	// Use this for initialization
@@ -27,6 +58,9 @@ public class PlayerCharacterController : MonoBehaviour {
 		{
 			Debug.LogError("PlayerInput not set to this game object!");
 		}
+
+		friendlyObjects = GameObject.FindGameObjectsWithTag (gameObject.tag);
+		Debug.Log ("Found " + friendlyObjects.Length + " " + gameObject.tag + "s" );
 	}
 	
 	// Update is called once per frame

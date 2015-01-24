@@ -414,7 +414,7 @@ public AnimationClip jumpPoseAnimation;
 	}
 	
 	void  Reset (){
-		gameObject.tag = "Player";
+		//gameObject.tag = "Player";
 	}
 	
 }
