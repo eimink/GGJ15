@@ -48,10 +48,8 @@ public class LevelGenerator : MonoBehaviour {
 				{
 					GameObject o = (GameObject)Instantiate(blocks[idx].prefab,new Vector3(i,0,j),Quaternion.identity);
 					o.transform.parent = m_levelParent.transform;
-
 					if (pixels[i*width+j] == spawnColor)
 					{
-						Debug.Log(pixels[i*width+j]);
 						o.tag = "SpawnPoint";
 					}
 				}

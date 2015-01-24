@@ -251,10 +251,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnColor: {r: 1, g: 0, b: 0, a: 1}
   blocks:
-  - key: {r: 0, g: 0, b: 0, a: 1}
-    prefab: {fileID: 100000, guid: ea6d275e0942c9c43a8484f8860cf6e8, type: 2}
   - key: {r: 1, g: 1, b: 1, a: 1}
     prefab: {fileID: 100000, guid: c70cd72a242e77a4cb31dcfafa4dc4f8, type: 2}
+  - key: {r: 0, g: 0, b: 0, a: 1}
+    prefab: {fileID: 100000, guid: ea6d275e0942c9c43a8484f8860cf6e8, type: 2}
   - key: {r: 1, g: 0, b: 0, a: 1}
     prefab: {fileID: 100000, guid: ea6d275e0942c9c43a8484f8860cf6e8, type: 2}
   - key: {r: 0, g: 1, b: 0, a: 1}
