@@ -47,12 +47,17 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\LevelGenerator\LevelGenerator.cs" />
+     <Compile Include="Assets\Scripts\CharacterMotor.cs" />
      <Compile Include="Assets\Scripts\EnergyBar.cs" />
      <Compile Include="Assets\Scripts\HealBox.cs" />
      <Compile Include="Assets\Scripts\PlayerCharacterController.cs" />
+     <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\PlayerSpawner.cs" />
+     <Compile Include="Assets\Scripts\ThirdPersonController.cs" />
      <Compile Include="Assets\Scripts\TimeBomb.cs" />
      <Compile Include="Assets\Utilities\GeneratorBlock.cs" />
+     <Compile Include="Assets\XInputDotNet\Examples\XInputTestCS.cs" />
+     <None Include="Assets\XInputDotNet\MITLicense.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Users/mikkor/Documents/tamppi/GGJ15/Project/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
