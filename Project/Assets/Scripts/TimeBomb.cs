@@ -25,6 +25,10 @@ public class TimeBomb : MonoBehaviour {
 			if (hit.rigidbody != null)
 				hit.rigidbody.AddExplosionForce(explosionForce,transform.position,explosionRadius);
 		}
-		Destroy(this.gameObject);
+		Invoke ("Destroy", 2.0f);
+	}
+	void Destroy()
+	{
+		Destroy (this.gameObject);
 	}
 }
