@@ -3,9 +3,9 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour {
 
-	public float damage = 1.0f;
-	public float range = 3.0f;
-	public float speed = 10.0f;
+	//public float damage = 10.0f;
+	public float range = 5.0f;
+	public float speed = 5.0f;
 
 	Vector3 startPosition;
 	// Use this for initialization
@@ -15,13 +15,13 @@ public class Projectile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate (Vector3.forward * Time.deltaTime);
+		transform.Translate (speed*Vector3.forward * Time.deltaTime);
 		if (Vector3.Distance(startPosition, transform.position) >= range)
 			Destroy (this.gameObject);
 	}
 
-	void OnTriggerEnter(Collider other) {
+	/*void OnTriggerEnter(Collider other) {
 		other.gameObject.SendMessage ("ApplyDamage", damage);
 		Destroy (this.gameObject);
-	}
+	}*/
 }

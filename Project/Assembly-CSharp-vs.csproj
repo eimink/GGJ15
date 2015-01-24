@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\PlayerSpawner.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\ProjectileDamage.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonController.cs" />
      <Compile Include="Assets\Scripts\TimeBomb.cs" />
      <Compile Include="Assets\Scripts\Turret.cs" />
