@@ -1124,7 +1124,7 @@ MonoBehaviour:
   runMaxAnimationSpeed: 1
   jumpAnimationSpeed: 1
   landAnimationSpeed: 1
-  walkSpeed: 10
+  walkSpeed: 20
   trotSpeed: 4
   runSpeed: 6
   inAirControlAcceleration: 3
@@ -1132,7 +1132,7 @@ MonoBehaviour:
   gravity: 20
   speedSmoothing: 10
   rotateSpeed: 5000
-  trotAfterSeconds: 3
+  trotAfterSeconds: 0
   canJump: 1
 --- !u!114 &11400006
 MonoBehaviour:
