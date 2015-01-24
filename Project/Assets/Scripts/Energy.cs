@@ -44,6 +44,12 @@ public class Energy : MonoBehaviour {
 	{
 		Debug.Log("Gameobject: " + gameObject.name + " heals " + h.ToString());
 		curEnergy = Mathf.Clamp (curEnergy + h, 0, maxEnergy);
+
+		TextMesh text = GetComponentInChildren<TextMesh> ();
+		if (text != null)
+		{
+			text.text = ((int)curEnergy).ToString();
+		}
 	}
 
 }
