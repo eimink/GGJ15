@@ -35,8 +35,15 @@ public class Energy : MonoBehaviour {
 		}
 
 		ThirdPersonController c = GetComponent<ThirdPersonController>();
-		if (c) {
+		if (c) 
+		{
 			c.Jump();
+		}
+
+		ParticleSystem ps = GetComponentInChildren<ParticleSystem> ();
+		if (ps) 
+		{
+			ps.Play ();
 		}
 	}
 

@@ -11,6 +11,8 @@ public class Turret : MonoBehaviour {
 	//public float distanceFalloff = 2.0f;
 	public GameObject projectile;
 
+	public GameObject turretObject;
+
 	string myPlayer;
 	string otherPlayer;
 	// Use this for initialization
@@ -54,8 +56,8 @@ public class Turret : MonoBehaviour {
 			Vector3 delta = objects[i].GetComponent<Transform>().position - gameObject.GetComponent<Transform>().position;
 			if( delta.magnitude <= range )
 			{
-				transform.LookAt(objects[i].GetComponent<Transform>().position);
-				Instantiate(projectile,this.transform.position,this.transform.rotation);
+				turretObject.transform.LookAt(objects[i].GetComponent<Transform>().position);
+				Instantiate(projectile,turretObject.transform.position,turretObject.transform.rotation);
 				
 				return true;
 			}
@@ -66,8 +68,16 @@ public class Turret : MonoBehaviour {
 
 	void Fire()
 	{
-		if( !Shoot (otherPlayer) )
-			Shoot (myPlayer);
+		if (!Shoot (otherPlayer))
+		{
+			if( !Shoot (myPlayer) )
+			{
+				GetComponentInChildren<ParticleSystem>().Stop();
+				return;
+			}
+		}
+
+		GetComponentInChildren<ParticleSystem>().Play();
 	}
 	
 	void Destroy()
