@@ -2,7 +2,8 @@ fileFormatVersion: 2
 guid: b8094b60ec153d640936a204186d4577
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - smudgePrefab: {fileID: 100002, guid: d263c14ce22a7ed48985682d8eb881b6, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

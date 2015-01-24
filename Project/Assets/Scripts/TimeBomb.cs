@@ -15,7 +15,7 @@ public class TimeBomb : MonoBehaviour {
 
 	Light light;
 
-	GameObject smudgePrefab;
+	public GameObject smudgePrefab;
 
 	// Use this for initialization
 	void Start () {
