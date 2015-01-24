@@ -6,6 +6,7 @@ public class TimeBomb : MonoBehaviour {
 	public float fuseDelay = 2.0f;
 	public float explosionRadius = 2.0f;
 	public float maxDamage = 10.0f;
+	public float explosionForce = 10.0f;
 	public float distanceFalloff = 2.0f;
 
 	// Use this for initialization
@@ -21,6 +22,8 @@ public class TimeBomb : MonoBehaviour {
 		{
 			float dmg = maxDamage - hit.distance * distanceFalloff;
 			hit.collider.gameObject.SendMessage("ApplyDamage",dmg,SendMessageOptions.DontRequireReceiver);
+			if (hit.rigidbody != null)
+				hit.rigidbody.AddExplosionForce(explosionForce,transform.position,explosionRadius);
 		}
 	}
 }
