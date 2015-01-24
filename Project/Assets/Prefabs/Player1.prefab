@@ -1125,9 +1125,9 @@ MonoBehaviour:
   jumpAnimationSpeed: 1
   landAnimationSpeed: 1
   walkSpeed: 20
-  trotSpeed: 4
+  trotSpeed: 5
   runSpeed: 6
-  inAirControlAcceleration: 3
+  inAirControlAcceleration: 10
   jumpHeight: 4
   gravity: 20
   speedSmoothing: 10
