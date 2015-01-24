@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Energy : MonoBehaviour {
 
-	public float maxEnergy = 10.0f;
+	public float maxEnergy = 100.0f;
 	private float curEnergy;
 
 	// Use this for initialization
