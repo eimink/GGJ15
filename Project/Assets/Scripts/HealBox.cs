@@ -10,6 +10,20 @@ public class HealBox : MonoBehaviour {
 	public float healAmountPerTick = 10.0f;
 	public float distanceFalloff = 2.0f;
 
+	void ApplyHeal(string tag)
+	{
+		GameObject [] objects = GameObject.FindGameObjectsWithTag(tag);
+		for (int i=0; i<objects.Length; ++i)
+		{
+			Vector3 delta = objects[i].GetComponent<Transform>().position - gameObject.GetComponent<Transform>().position;
+			if( delta.magnitude <= healRadius )
+			{
+				float dmg = (healRadius - delta.magnitude) / healRadius;
+				objects[i].SendMessage("Heal",dmg*healAmountPerTick,SendMessageOptions.DontRequireReceiver);
+			}
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
 		InvokeRepeating("Heal", fuseDelay, timeBetweenTicks);
@@ -18,13 +32,8 @@ public class HealBox : MonoBehaviour {
 	
 	void Heal()
 	{
-		this.gameObject.GetComponent<ParticleSystem>().Play();
-		RaycastHit[] hits = Physics.SphereCastAll (transform.position, healRadius, transform.forward);
-		foreach (RaycastHit hit in hits)
-		{
-			float h = healAmountPerTick - hit.distance * distanceFalloff;
-			hit.collider.gameObject.SendMessage("Heal",h,SendMessageOptions.DontRequireReceiver);
-		}
+		ApplyHeal("Player1");
+		ApplyHeal("Player2");
 	}
 
 	void Destroy()
