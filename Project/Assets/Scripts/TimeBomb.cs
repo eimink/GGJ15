@@ -15,6 +15,8 @@ public class TimeBomb : MonoBehaviour {
 
 	Light light;
 
+	GameObject smudgePrefab;
+
 	// Use this for initialization
 	void Start () {
 		light = GetComponentInChildren<Light> ();
@@ -90,12 +92,15 @@ public class TimeBomb : MonoBehaviour {
 
 			GetComponent<Transform>().FindChild("ExplosionSphere").localScale = new Vector3(scale,scale,scale);
 			light.gameObject.GetComponent<Transform>().Translate(new Vector3(0,scale,0));
-		//	light.range = scale;
 		}
 	}
 
 	void Destroy()
 	{
+		Quaternion rot = new Quaternion (UnityEngine.Random.value,UnityEngine.Random.value,UnityEngine.Random.value,UnityEngine.Random.value);
+
+		GameObject.Instantiate(smudgePrefab,GetComponent<Transform>().position,rot);
+
 		Destroy (this.gameObject);
 	}
 }
