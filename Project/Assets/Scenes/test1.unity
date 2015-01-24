@@ -130,8 +130,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
-  far clip plane: 1000
+  near clip plane: 35
+  far clip plane: 130
   field of view: 60
   orthographic: 1
   orthographic size: 25
@@ -261,7 +261,7 @@ MonoBehaviour:
     prefab: {fileID: 100000, guid: 2bb50f6030e911546a748edb6ea65af1, type: 2}
   floorTile: {fileID: 100000, guid: ea6d275e0942c9c43a8484f8860cf6e8, type: 2}
   floorColor: {r: 0, g: 0, b: 0, a: 1}
-  spawnpoints: 4
+  spawnpoints: 8
   width: 64
   height: 64
   xOrg: 0

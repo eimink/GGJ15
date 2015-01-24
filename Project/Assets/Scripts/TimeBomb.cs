@@ -66,7 +66,9 @@ public class TimeBomb : MonoBehaviour {
 		LightOn ();
 
 		Quaternion r = Quaternion.Euler(new Vector3(0.0f,UnityEngine.Random.value*360.0f,0.0f));
-		GameObject.Instantiate(smudgePrefab,GetComponent<Transform>().position,r);
+		GameObject smudge = GameObject.Instantiate(smudgePrefab,GetComponent<Transform>().position,r) as GameObject;
+		float scaleVal = 0.7f + UnityEngine.Random.value * 0.6f;
+		smudge.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale * scaleVal;
 
 		//Invoke ("LightOn", explosionTime/8.0f);
 		//Invoke ("LightOff", explosionTime/3.0f);
