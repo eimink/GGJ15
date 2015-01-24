@@ -6,7 +6,6 @@ public class LevelGenerator : MonoBehaviour {
 
 	public Color spawnColor;
 	public GeneratorBlock[] blocks;
-	public Texture2D testBitmap;
 	public bool Ready {get{return m_ready;}}
 
 	GameObject m_levelParent;
@@ -17,7 +16,6 @@ public class LevelGenerator : MonoBehaviour {
 		m_ready = false;
 		m_levelParent = new GameObject ();
 		m_levelParent.name = "GeneratedLevel";
-		GenerateLevelFromBitmap (testBitmap);
 	}
 	
 	// Update is called once per frame
@@ -25,7 +23,7 @@ public class LevelGenerator : MonoBehaviour {
 	
 	}
 
-	void GenerateLevelFromBitmap(Texture2D bitmap)
+	protected void GenerateLevelFromBitmap(Texture2D bitmap)
 	{
 		Color[] pixels = bitmap.GetPixels();
 		int width = bitmap.width;
@@ -47,7 +45,7 @@ public class LevelGenerator : MonoBehaviour {
 		m_ready = true;
 	}
 
-	int FindBlockIndex(Color c)
+	protected int FindBlockIndex(Color c)
 	{
 		for (int i = 0; i < blocks.Length; i++) 
 		{

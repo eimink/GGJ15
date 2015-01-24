@@ -46,17 +46,24 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\LevelGenerator\BitmapLevelGenerator.cs" />
      <Compile Include="Assets\LevelGenerator\LevelGenerator.cs" />
+     <Compile Include="Assets\LevelGenerator\RandomLevelGenerator.cs" />
+     <Compile Include="Assets\Scripts\CharacterMotor.cs" />
+     <Compile Include="Assets\Scripts\EnergyBar.cs" />
+     <Compile Include="Assets\Scripts\HealBox.cs" />
      <Compile Include="Assets\Scripts\PlayerCharacterController.cs" />
+     <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\PlayerSpawner.cs" />
+     <Compile Include="Assets\Scripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\ThirdPersonController.cs" />
      <Compile Include="Assets\Scripts\TimeBomb.cs" />
+     <Compile Include="Assets\Scripts\Turret.cs" />
+     <Compile Include="Assets\Scripts\WallElement.cs" />
      <Compile Include="Assets\Utilities\GeneratorBlock.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{EB8AA23C-2655-E22B-2EBB-05697394EDB3}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{6F4D0F38-84A9-F27A-19D7-9961C098D6DA}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+     <Compile Include="Assets\Utilities\PerlinGenerator.cs" />
+     <Compile Include="Assets\XInputDotNet\Examples\XInputTestCS.cs" />
+     <None Include="Assets\XInputDotNet\MITLicense.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
