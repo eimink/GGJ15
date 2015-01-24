@@ -8,8 +8,10 @@ public class TimeBomb : MonoBehaviour {
 	public float maxDamage = 10.0f;
 	public float explosionForce = 1000.0f;
 	public float distanceFalloff = 0.1f;
-
+	public float explosionTime = 0.5f;
 	private bool exploding = false;
+
+	float timeSinceExplosion = 0.0f;
 	// Use this for initialization
 	void Start () {
 		Invoke ("Explode", fuseDelay);
@@ -17,14 +19,15 @@ public class TimeBomb : MonoBehaviour {
 
 	void ApplyDamage(string tag)
 	{
+		float scale = explosionRadius*(explosionTime-timeSinceExplosion);
 		GameObject [] objects = GameObject.FindGameObjectsWithTag(tag);
 		for (int i=0; i<objects.Length; ++i)
 		{
 			Vector3 delta = objects[i].GetComponent<Transform>().position - gameObject.GetComponent<Transform>().position;
-			if( delta.magnitude <= explosionRadius )
+			if( delta.magnitude <= scale )
 			{
 				float dmg = (explosionRadius - delta.magnitude) / explosionRadius;
-				objects[i].SendMessage("ApplyDamage",Time.deltaTime*dmg*maxDamage,SendMessageOptions.DontRequireReceiver);
+				objects[i].SendMessage("ApplyDamage",Time.deltaTime*dmg*maxDamage*(1.0f/explosionTime),SendMessageOptions.DontRequireReceiver);
 			}
 		}
 	}
@@ -36,10 +39,16 @@ public class TimeBomb : MonoBehaviour {
 		GameObject bm = GetComponent<Transform>().FindChild("Bomb_model").gameObject;
 		bm.SetActive (false);
 
-		Invoke ("Destroy", 1.0f);
-		
-		Invoke ("DisableDamage", 0.3f);
+
+		timeSinceExplosion = 0.0f;
+		Invoke ("DisableDamage", explosionTime);
+		Invoke ("Destroy", explosionTime + 0.05f);
+
 	}
+
+	/*void MakeBiggerExplosion()
+	{
+	}*/
 
 	void DisableDamage()
 	{
@@ -50,9 +59,14 @@ public class TimeBomb : MonoBehaviour {
 	{
 		if (exploding)
 		{
+			timeSinceExplosion += Time.deltaTime;
+			float scale = 2.0f*explosionRadius*(/*explosionTime-*/timeSinceExplosion);
+
 			ApplyDamage ("Player1");
 			ApplyDamage ("Player2");
 			ApplyDamage ("DestroyableWall");
+
+			GetComponent<Transform>().FindChild("ExplosionSphere").localScale = new Vector3(scale,scale,scale);
 		}
 	}
 

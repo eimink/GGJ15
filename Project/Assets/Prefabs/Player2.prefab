@@ -1121,7 +1121,7 @@ MonoBehaviour:
   action2Prefab: {fileID: 100000, guid: a6cc5fc2a053e9a4287f5907251452fa, type: 2}
   action3Prefab: {fileID: 0}
   action4Prefab: {fileID: 100000, guid: a5b760baee69e2e468bee68896cab8c5, type: 2}
-  cooldownTime: 1
+  cooldownTime: .5
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
