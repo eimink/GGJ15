@@ -87,8 +87,7 @@ public class PlayerCharacterController : MonoBehaviour {
 			{
 				Instantiate (action3Prefab, GetComponent<Transform> ().position, Quaternion.identity);
 				canDoAction = false;
-				Invoke ("ActivateAction", cooldownTime); 
-				
+				Invoke ("ActivateAction", cooldownTime);	
 			}
 			if (input.GetPlayerInputAxis("Fire4") )
 			{
