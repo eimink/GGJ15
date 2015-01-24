@@ -2,6 +2,13 @@
 using System.Collections;
 [AddComponentMenu("Rayco's scripts/third person controller")]
 public class ThirdPersonController : MonoBehaviour {
+
+	private bool jumpNow = false;
+	public void Jump()
+	{
+		jumpNow = true;
+	}
+
 	public AnimationClip idleAnimation;
 	public AnimationClip walkAnimation;
 	public AnimationClip runAnimation;
@@ -14,6 +21,7 @@ public class ThirdPersonController : MonoBehaviour {
 	public float landAnimationSpeed =1F;
 	
 	private Animation _animation;
+
 
 
 	enum CharacterState {
@@ -115,14 +123,13 @@ public AnimationClip jumpPoseAnimation;
 			_animation = null;
 			Debug.Log("No run animation found. Turning off animations.");
 		}
-		if(!jumpPoseAnimation ) {
+		if(!jumpPoseAnimation && canJump) {
 			_animation = null;
 			Debug.Log("No jump animation found and the character has canJump enabled. Turning off animations.");
 		}
 		
 	}
 	void  UpdateSmoothedMovementDirection (){
-		PlayerInput input = GetComponent<PlayerInput> ();
 		Transform cameraTransform = Camera.main.transform;
 		bool grounded = IsGrounded();
 		
@@ -134,7 +141,8 @@ public AnimationClip jumpPoseAnimation;
 		// Right vector relative to the camera
 		// Always orthogonal to the forward vector
 		Vector3 right= new Vector3(forward.z, 0, -forward.x);
-		
+
+		PlayerInput input = GetComponent<PlayerInput> ();
 		float v= input.GetPlayerInputAxisValue("Vertical");
 		float h= input.GetPlayerInputAxisValue("Horizontal");
 		
@@ -164,7 +172,7 @@ public AnimationClip jumpPoseAnimation;
 			if (targetDirection != Vector3.zero)
 			{
 				// If we are really slow, just snap to the target direction
-				if (moveSpeed < walkSpeed * 0.9f )
+				if (moveSpeed < walkSpeed * 0.9f && grounded)
 				{
 					moveDirection = targetDirection.normalized;
 				}
@@ -232,7 +240,7 @@ public AnimationClip jumpPoseAnimation;
 			// Jump
 			// - Only when pressing the button down
 			// - With a timeout so you can press the button slightly before landing    
-			if ( Time.time < lastJumpButtonTime + jumpTimeout) {
+			if (canJump && Time.time < lastJumpButtonTime + jumpTimeout) {
 				verticalSpeed = CalculateJumpVerticalSpeed (jumpHeight);
 				SendMessage("DidJump", SendMessageOptions.DontRequireReceiver);
 			}
@@ -242,11 +250,11 @@ public AnimationClip jumpPoseAnimation;
 		if (isControllable) // don't move player at all if not controllable.
 		{
 			// Apply gravity
-			bool jumpButton= false;//Input.GetButton("Jump");
+//			bool jumpButton= Input.GetButton("Jump");
 			
 			
 			// When we reach the apex of the jump we send out a message
-			if (jumping  && !jumpingReachedApex && verticalSpeed <= 0.0f)
+			if (jumping && !jumpingReachedApex && verticalSpeed <= 0.0f)
 			{
 				jumpingReachedApex = true;
 				SendMessage("DidJumpReachApex", SendMessageOptions.DontRequireReceiver);
@@ -279,13 +287,14 @@ public AnimationClip jumpPoseAnimation;
 			// kill all inputs if not controllable.
 			Input.ResetInputAxes();
 		}
-		
-/*		if (Input.GetButtonDown ("Jump"))
+
+		PlayerInput input = GetComponent<PlayerInput> ();
+		if (jumpNow)
 		{
 			lastJumpButtonTime = Time.time;
+			jumpNow = false;
 		}
-*		
-*/
+		
 		UpdateSmoothedMovementDirection();
 		
 		// Apply gravity
@@ -412,7 +421,7 @@ public AnimationClip jumpPoseAnimation;
 	bool  IsGroundedWithTimeout (){
 		return lastGroundedTime + groundedTimeout > Time.time;
 	}
-	
+
 	void  Reset (){
 		//gameObject.tag = "Player";
 	}

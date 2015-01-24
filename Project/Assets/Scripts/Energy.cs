@@ -33,6 +33,11 @@ public class Energy : MonoBehaviour {
 		{
 			text.text = ((int)curEnergy).ToString();
 		}
+
+		ThirdPersonController c = GetComponent<ThirdPersonController>();
+		if (c) {
+			c.Jump();
+		}
 	}
 
 	void Destroy()
