@@ -13,7 +13,7 @@ public class Energy : MonoBehaviour {
 		TextMesh text = GetComponentInChildren<TextMesh> ();
 		if (text != null)
 		{
-			text.text = curEnergy.ToString();
+			text.text = ((int)curEnergy).ToString();
 		}
 	}
 
@@ -31,7 +31,7 @@ public class Energy : MonoBehaviour {
 		TextMesh text = GetComponentInChildren<TextMesh> ();
 		if (text != null)
 		{
-			text.text = curEnergy.ToString();
+			text.text = ((int)curEnergy).ToString();
 		}
 	}
 
