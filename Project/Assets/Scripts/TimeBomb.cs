@@ -64,6 +64,10 @@ public class TimeBomb : MonoBehaviour {
 		timeSinceExplosion = 0.0f;
 		Invoke ("DisableDamage", explosionTime);
 		LightOn ();
+
+		Quaternion r = Quaternion.Euler(new Vector3(0.0f,UnityEngine.Random.value*360.0f,0.0f));
+		GameObject.Instantiate(smudgePrefab,GetComponent<Transform>().position,r);
+
 		//Invoke ("LightOn", explosionTime/8.0f);
 		//Invoke ("LightOff", explosionTime/3.0f);
 		Invoke ("Destroy", explosionTime + 0.05f);
@@ -97,9 +101,8 @@ public class TimeBomb : MonoBehaviour {
 
 	void Destroy()
 	{
-		Quaternion rot = new Quaternion (UnityEngine.Random.value,UnityEngine.Random.value,UnityEngine.Random.value,UnityEngine.Random.value);
+	//	Quaternion rot = new Quaternion (UnityEngine.Random.value,UnityEngine.Random.value,UnityEngine.Random.value,UnityEngine.Random.value);
 
-		GameObject.Instantiate(smudgePrefab,GetComponent<Transform>().position,rot);
 
 		Destroy (this.gameObject);
 	}
