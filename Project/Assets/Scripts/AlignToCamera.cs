@@ -10,12 +10,12 @@ public class AlignToCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 v = Camera.mainCamera.transform.position - transform.position;
+		Vector3 v = Camera.main.transform.position - transform.position;
 		
 		v.x = v.z = 0.0f;
 		
-		transform.LookAt( Camera.mainCamera.transform.position - v );
+		transform.LookAt( Camera.main.transform.position - v );
 		
-		transform.rotation =(Camera.mainCamera.transform.rotation); // Take care about camera rotation
+		transform.rotation =(Camera.main.transform.rotation); // Take care about camera rotation
 	}
 }
