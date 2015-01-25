@@ -50,9 +50,9 @@ public class RandomLevelGenerator : LevelGenerator {
 		xOrg = UnityEngine.Random.Range(-64,64);
 		yOrg = UnityEngine.Random.Range(-64,64);
 		scale = UnityEngine.Random.Range (2, 16);
-		darkTreshold = UnityEngine.Random.Range (1, 40) / 100;
-		midTreshold = UnityEngine.Random.Range(41,70) / 100;
-		lightTreshold = UnityEngine.Random.Range (71, 100) / 100;
+		darkTreshold = UnityEngine.Random.Range (1f, 40f) / 100f;
+		midTreshold = UnityEngine.Random.Range(41f,70f) / 100f;
+		lightTreshold = UnityEngine.Random.Range (71f, 100f) / 100f;
 		RunGenerator();
 	}
 
