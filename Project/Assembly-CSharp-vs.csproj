@@ -73,6 +73,7 @@
      <Compile Include="Assets\Utilities\CameraTumble.cs" />
      <Compile Include="Assets\Utilities\GeneratorBlock.cs" />
      <Compile Include="Assets\Utilities\PerlinGenerator.cs" />
+     <Compile Include="Assets\Utilities\SceneHelper.cs" />
      <Compile Include="Assets\Utilities\UiClickDetector.cs" />
      <Compile Include="Assets\XInputDotNet\Examples\XInputTestCS.cs" />
      <None Include="Assets\XInputDotNet\MITLicense.txt" />

@@ -89,11 +89,15 @@ public class PlayerCharacterController : MonoBehaviour {
 		if (input.GetPlayerInputAxis("Fire1"))
 		{
 			// hyppy
+			bool jumpCheck = GetComponent<ThirdPersonController>().IsGrounded();
+			if(jumpCheck == true)
+			{
+				PlayerInput playerNumber = (PlayerInput)this.GetComponent("PlayerInput");
+				AudioClip sfx = this.jumpSound;
+				PlayAudio audioPlayer = (PlayAudio)GameObject.Find("Audio").GetComponent("PlayAudio");
+				audioPlayer.PlaySound(sfx, playerNumber.playerIndex);
+			}
 			GetComponent<ThirdPersonController>().Jump();
-			PlayerInput playerNumber = (PlayerInput)this.GetComponent("PlayerInput");
-			AudioClip sfx = this.jumpSound;
-			PlayAudio audioPlayer = (PlayAudio)GameObject.Find("Audio").GetComponent("PlayAudio");
-			audioPlayer.PlaySound(sfx, playerNumber.playerIndex);
 		}
 
 		if (canDoActionB && input.GetPlayerInputAxis("Fire2") )

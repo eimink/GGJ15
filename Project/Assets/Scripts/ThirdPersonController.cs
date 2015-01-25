@@ -396,7 +396,7 @@ public AnimationClip jumpPoseAnimation;
 		return jumping;
 	}
 	
-	bool  IsGrounded (){
+	public bool  IsGrounded (){
 		return (collisionFlags & CollisionFlags.CollidedBelow) != 0;
 	}
 	
