@@ -65,8 +65,8 @@ public class Turret : MonoBehaviour {
 			if( delta.magnitude <= range )
 			{
 				turretObject.transform.LookAt(objects[i].GetComponent<Transform>().position);
-				Instantiate(projectile,turretObject.transform.position + turretObject.transform.rotation*projectileOffset,turretObject.transform.rotation);
-				
+				GameObject obj = Instantiate(projectile,turretObject.transform.position + turretObject.transform.rotation*projectileOffset,turretObject.transform.rotation) as GameObject;
+				obj.transform.parent = GameObject.FindGameObjectWithTag("DynamicObjects").transform;
 				return true;
 			}
 		}

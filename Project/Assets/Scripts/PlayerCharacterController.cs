@@ -94,7 +94,8 @@ public class PlayerCharacterController : MonoBehaviour {
 
 		if (canDoActionB && input.GetPlayerInputAxis("Fire2") )
 		{
-			Instantiate (actionBPrefab, GetComponent<Transform> ().position, Quaternion.identity);
+			GameObject obj = Instantiate (actionBPrefab, GetComponent<Transform> ().position, Quaternion.identity) as GameObject;
+			obj.transform.parent = GameObject.FindGameObjectWithTag("DynamicObjects").transform;
 			canDoActionB = false;
 			Invoke ("ActivateActionB", actionBCooldownTime);
 			PlayerInput playerNumber = (PlayerInput)this.GetComponent("PlayerInput");
@@ -105,14 +106,16 @@ public class PlayerCharacterController : MonoBehaviour {
 		if (canDoActionX && input.GetPlayerInputAxis("Fire3"))
 		{
 			// pommi = x
-			Instantiate (actionXPrefab, GetComponent<Transform> ().position, Quaternion.identity);
+			GameObject obj = Instantiate (actionXPrefab, GetComponent<Transform> ().position, Quaternion.identity) as GameObject;
+			obj.transform.parent = GameObject.FindGameObjectWithTag("DynamicObjects").transform;
 			canDoActionX = false;
 			Invoke ("ActivateActionX", actionXCooldownTime);
 		}
 		if (canDoActionY && input.GetPlayerInputAxis("Fire4") )
 		{
 			// turretti = y
-			Instantiate (actionYPrefab, GetComponent<Transform> ().position, Quaternion.identity);
+			GameObject obj = Instantiate (actionYPrefab, GetComponent<Transform> ().position, Quaternion.identity) as GameObject;
+			obj.transform.parent = GameObject.FindGameObjectWithTag("DynamicObjects").transform;
 			canDoActionY = false;
 			Invoke ("ActivateActionY", actionYCooldownTime); 
 		}

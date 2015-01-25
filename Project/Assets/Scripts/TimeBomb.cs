@@ -75,8 +75,9 @@ public class TimeBomb : MonoBehaviour {
 
 		Quaternion r = Quaternion.Euler(new Vector3(0.0f,UnityEngine.Random.value*360.0f,0.0f));
 		GameObject smudge = GameObject.Instantiate(smudgePrefab,GetComponent<Transform>().position,r) as GameObject;
-		
-		GameObject.Instantiate(smokePrefab, GetComponent<Transform>().position, Quaternion.identity);
+		smudge.transform.parent = GameObject.FindGameObjectWithTag("DynamicObjects").transform;
+		smudge = GameObject.Instantiate(smokePrefab, GetComponent<Transform>().position, Quaternion.identity) as GameObject;
+		smudge.transform.parent = GameObject.FindGameObjectWithTag("DynamicObjects").transform;
 		float scaleVal = 0.7f + UnityEngine.Random.value * 0.6f;
 		smudge.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale * scaleVal;
 

@@ -34,11 +34,13 @@ public class PlayerSpawner : MonoBehaviour {
 				spawnPos.y += 1.0f;
 				if( i%2 == 0 )
 				{
-					GameObject.Instantiate(player1Prefab,spawnPos,Quaternion.identity);
+					GameObject obj = GameObject.Instantiate(player1Prefab,spawnPos,Quaternion.identity) as GameObject;
+					obj.transform.parent = GameObject.FindGameObjectWithTag("PlayersPool").transform;
 				}
 				else
 				{
-					GameObject.Instantiate(player2Prefab,spawnPos,Quaternion.identity);
+					GameObject obj = GameObject.Instantiate(player2Prefab,spawnPos,Quaternion.identity) as GameObject;
+					obj.transform.parent = GameObject.FindGameObjectWithTag("PlayersPool").transform;
 				}
 			}
 
