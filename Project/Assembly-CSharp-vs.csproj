@@ -49,6 +49,7 @@
      <Compile Include="Assets\LevelGenerator\BitmapLevelGenerator.cs" />
      <Compile Include="Assets\LevelGenerator\LevelGenerator.cs" />
      <Compile Include="Assets\LevelGenerator\RandomLevelGenerator.cs" />
+     <Compile Include="Assets\PlayAudio.cs" />
      <Compile Include="Assets\Scripts\AlignToCamera.cs" />
      <Compile Include="Assets\Scripts\CharacterMotor.cs" />
      <Compile Include="Assets\Scripts\DeleteLater.cs" />

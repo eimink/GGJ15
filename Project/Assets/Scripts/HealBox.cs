@@ -23,7 +23,7 @@ public class HealBox : MonoBehaviour {
 		}
 
 		
-		this.gameObject.GetComponent<AudioSource>().Play();
+		//this.gameObject.GetComponent<AudioSource>().Play();
 	}
 
 	// Use this for initialization

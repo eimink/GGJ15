@@ -8,6 +8,11 @@ public class PlayerCharacterController : MonoBehaviour {
 	public GameObject actionXPrefab;
 	public GameObject actionYPrefab;
 
+
+	
+	public AudioClip healSound;
+	public AudioClip jumpSound;
+
 	public float cooldownTime = 1.0f;
 
 	bool canDoAction = true;
@@ -78,7 +83,11 @@ public class PlayerCharacterController : MonoBehaviour {
 			{
 				Instantiate (actionBPrefab, GetComponent<Transform> ().position, Quaternion.identity);
 				canDoAction = false;
-				Invoke ("ActivateAction", cooldownTime); 
+				Invoke ("ActivateAction", cooldownTime);
+				PlayerInput playerNumber = (PlayerInput)this.GetComponent("PlayerInput");
+				AudioClip sfx = this.healSound;
+				PlayAudio audioPlayer = (PlayAudio)GameObject.Find("Audio").GetComponent("PlayAudio");
+				audioPlayer.PlaySound(sfx, playerNumber.playerIndex);
 			}
 			if (input.GetPlayerInputAxis("Fire3"))
 			{

@@ -1,14 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerCharacterController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayAudio.js">
     <Files>
-      <File FileName="Assets\Scripts\ProjectileDamage.cs" Line="9" Column="57" />
+      <File FileName="Assets\Scripts\PlayerCharacterController.cs" Line="68" Column="2" />
+      <File FileName="Assets\Scripts\ProjectileDamage.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Projectile.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Turret.cs" Line="88" Column="1" />
+      <File FileName="Assets\Scripts\Turret.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\TimeBomb.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DeleteLater.cs" Line="17" Column="1" />
-      <File FileName="Assets\Scripts\Energy.cs" Line="68" Column="3" />
-      <File FileName="Assets\Scripts\PlayerCharacterController.cs" Line="89" Column="5" />
+      <File FileName="Assets\Scripts\DeleteLater.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Energy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HealBox.cs" Line="1" Column="1" />
+      <File FileName="Assets\PlayAudio.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
