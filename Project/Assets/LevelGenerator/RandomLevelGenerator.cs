@@ -19,12 +19,12 @@ public class RandomLevelGenerator : LevelGenerator {
 	// Use this for initialization
 	void Start () {
 		Init();
-		if (SceneHelper.instance != null)
+		/*if (SceneHelper.instance != null)
 		{
 			spawnpoints = SceneHelper.instance.numOfCreatures;
 			GenerateWithSeed (SceneHelper.instance.levelSeed);
 		}
-		else
+		else*/
 			RunGenerator();
 	}
 
@@ -33,10 +33,20 @@ public class RandomLevelGenerator : LevelGenerator {
 		m_started = true;
 	}
 
+	int TextToInteger(string param)
+	{
+		int rval = 0;
+		for (int i=0; i < param.Length; i++)
+		{
+			rval += (int)param[i];
+		}
+		return rval;
+	}
+
 	void GenerateWithSeed(string seed)
 	{
 		Init();
-		UnityEngine.Random.seed = (Convert.ToInt32(seed));
+		UnityEngine.Random.seed = (TextToInteger(seed));
 		xOrg = UnityEngine.Random.Range(-64,64);
 		yOrg = UnityEngine.Random.Range(-64,64);
 		scale = UnityEngine.Random.Range (2, 16);

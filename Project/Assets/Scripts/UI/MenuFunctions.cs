@@ -6,7 +6,7 @@ public class MenuFunctions : MonoBehaviour {
 
 	void StartGame()
 	{
-		//TODO: Load another scene and seed the level.
+		Application.LoadLevel ("test1");
 	}
 
 	void TextChanged(textChangeMessageData msg)
