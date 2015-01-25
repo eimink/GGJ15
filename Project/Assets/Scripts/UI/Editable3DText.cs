@@ -9,7 +9,6 @@ public struct textChangeMessageData{
 public class Editable3DText : MonoBehaviour {
 
 	bool inEditMode = false;
-	string storedString;
 	TextMesh textComponent;
 
 	public Color textColor;
@@ -26,7 +25,6 @@ public class Editable3DText : MonoBehaviour {
 			activeColor = mainMenu.activeColor;
 		}
 		textComponent = GetComponent<TextMesh> ();
-		storedString = textComponent.text;
 		renderer.material.color = textColor;	
 		checkChars();
 	}
