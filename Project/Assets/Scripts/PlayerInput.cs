@@ -10,7 +10,7 @@ public class PlayerInput : MonoBehaviour
 
 	public bool GetPlayerInputAxis(string axis)
 	{
-		if ( state.IsConnected )
+		if (state.IsConnected) 
 		{
 			if ("Fire1" == axis) {
 					return state.Buttons.A == ButtonState.Pressed;
@@ -21,7 +21,11 @@ public class PlayerInput : MonoBehaviour
 			} else if ("Fire4" == axis) {
 					return state.Buttons.Y == ButtonState.Pressed;
 			}
+		} 
+		else
+		{
 		}
+
 		return false;
 	}
 
@@ -29,12 +33,19 @@ public class PlayerInput : MonoBehaviour
 	{
 		if ( state.IsConnected )
 		{
-			if ("Vertical" == axis) {
+			if ("Vertical" == axis) 
+			{
 				return state.ThumbSticks.Left.Y;
-			} else if ("Horizontal" == axis) {
+			} 
+			else if ("Horizontal" == axis) 
+			{
 				return state.ThumbSticks.Left.X;
 			}
+		} 
+		else
+		{
 		}
+
 		return 0.0f;
 	}
 

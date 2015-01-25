@@ -15,12 +15,12 @@ public class GameStateController : MonoBehaviour {
 		if (frameCount > 10) {
 						if (GameObject.FindGameObjectsWithTag ("Player1").Length == 0) {
 								Debug.Log ("Player2 wins!");
-								Application.LoadLevel ("Scenes/menu");
+								Application.LoadLevel (0);
 						}
 
 						if (GameObject.FindGameObjectsWithTag ("Player2").Length == 0) {
 								Debug.Log ("Player1 wins!");
-						Application.LoadLevel ("Scenes/menu");
+						Application.LoadLevel (0);
 						}
 				}
 
