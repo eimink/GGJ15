@@ -64,6 +64,8 @@ public class Turret : MonoBehaviour {
 			Vector3 delta = objects[i].GetComponent<Transform>().position - gameObject.GetComponent<Transform>().position;
 			if( delta.magnitude <= range )
 			{
+				
+				this.gameObject.GetComponent<AudioSource>().Play();
 				turretObject.transform.LookAt(objects[i].GetComponent<Transform>().position);
 				GameObject obj = Instantiate(projectile,turretObject.transform.position + turretObject.transform.rotation*projectileOffset,turretObject.transform.rotation) as GameObject;
 				obj.transform.parent = GameObject.FindGameObjectWithTag("DynamicObjects").transform;
