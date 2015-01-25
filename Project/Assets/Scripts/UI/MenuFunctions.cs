@@ -11,11 +11,11 @@ public class MenuFunctions : MonoBehaviour {
 
 	void TextChanged(textChangeMessageData msg)
 	{
-		if (msg.sender = "seed edit") 
+		if (msg.sender == "seed edit") 
 		{
 			//TODO: set value to correct place. msg.text contains the seed.
 		}
-		if (msg.sender = "numOfChars edit") 
+		if (msg.sender == "numOfChars edit") 
 		{
 			int value = Convert.ToInt32(msg.text);
 			//TODO: set value to correct place.

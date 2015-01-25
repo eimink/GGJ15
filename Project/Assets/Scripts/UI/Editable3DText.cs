@@ -53,7 +53,7 @@ public class Editable3DText : MonoBehaviour {
 			textComponent.text = "NULL";
 		}
 		msgdata.sender = this.gameObject.name;
-		msgdata.text = textComponent.text
+		msgdata.text = textComponent.text;
 		mainMenu.SendMessage ("TextChanged", msgdata, SendMessageOptions.DontRequireReceiver);
 	}
 	void startEditing() {
