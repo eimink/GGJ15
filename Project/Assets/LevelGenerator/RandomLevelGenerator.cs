@@ -19,7 +19,13 @@ public class RandomLevelGenerator : LevelGenerator {
 	// Use this for initialization
 	void Start () {
 		Init();
-		RunGenerator();
+		if (SceneHelper.instance != null)
+		{
+			spawnpoints = SceneHelper.instance.numOfCreatures;
+			GenerateWithSeed (SceneHelper.instance.levelSeed);
+		}
+		else
+			RunGenerator();
 	}
 
 	void RunGenerator()

@@ -13,12 +13,12 @@ public class MenuFunctions : MonoBehaviour {
 	{
 		if (msg.sender == "seed edit") 
 		{
-			//TODO: set value to correct place. msg.text contains the seed.
+			SceneHelper.instance.levelSeed = msg.text;
 		}
 		if (msg.sender == "numOfChars edit") 
 		{
 			int value = Convert.ToInt32(msg.text);
-			//TODO: set value to correct place.
+			SceneHelper.instance.numOfCreatures = value; 
 		}
 	}
 }
