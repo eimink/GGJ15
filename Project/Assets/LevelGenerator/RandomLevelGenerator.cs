@@ -33,8 +33,9 @@ public class RandomLevelGenerator : LevelGenerator {
 		xOrg = UnityEngine.Random.Range(-64,64);
 		yOrg = UnityEngine.Random.Range(-64,64);
 		scale = UnityEngine.Random.Range (2, 16);
-		darkTreshold = UnityEngine.Random.Range (1, 10) / 10;
-		lightTreshold = UnityEngine.Random.Range (1, 10) / 10;
+		darkTreshold = UnityEngine.Random.Range (1, 40) / 100;
+		midTreshold = UnityEngine.Random.Range(41,70) / 100;
+		lightTreshold = UnityEngine.Random.Range (71, 100) / 100;
 		RunGenerator();
 	}
 
@@ -99,7 +100,6 @@ public class RandomLevelGenerator : LevelGenerator {
 			}
 			tex.SetPixel((int)point.x,(int)point.y,debrisColor);
 		}
-
 		return tex;
 	}
 
