@@ -90,11 +90,11 @@ public class RandomLevelGenerator : LevelGenerator {
 			{
 				Vector2 point = GetPoint((i+j)%4);
 				Color pixel = tex.GetPixel((int)point.x,(int)point.y);
-				while(pixel != floorColor)
+				/*while(pixel != floorColor)
 				{
 					point = GetPoint((i+j)%4);
 					pixel = tex.GetPixel((int)point.x,(int)point.y);
-				}
+				}*/
 				tex.SetPixel((int)point.x,(int)point.y,spawnColor);
 			}
 		}
@@ -105,17 +105,17 @@ public class RandomLevelGenerator : LevelGenerator {
 	{
 		Texture2D tex = t;
 		Color debrisColor = new Color (0, 1, 0);
-		int debrisAmount = UnityEngine.Random.Range (16, 32);
+		int debrisAmount = UnityEngine.Random.Range (16, 64);
 		for (int i = 0; i < debrisAmount; i++)
 		{
 			Vector2 point = GetPoint();
 			Color pixel = tex.GetPixel((int)point.x,(int)point.y);
-			while(pixel != floorColor)
+			if(pixel != floorColor)
 			{
-				point = GetPoint();
-				pixel = tex.GetPixel((int)point.x,(int)point.y);
+				i++;
 			}
-			tex.SetPixel((int)point.x,(int)point.y,debrisColor);
+			else
+				tex.SetPixel((int)point.x,(int)point.y,debrisColor);
 		}
 		return tex;
 	}
