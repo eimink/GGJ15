@@ -90,6 +90,10 @@ public class PlayerCharacterController : MonoBehaviour {
 		{
 			// hyppy
 			GetComponent<ThirdPersonController>().Jump();
+			PlayerInput playerNumber = (PlayerInput)this.GetComponent("PlayerInput");
+			AudioClip sfx = this.jumpSound;
+			PlayAudio audioPlayer = (PlayAudio)GameObject.Find("Audio").GetComponent("PlayAudio");
+			audioPlayer.PlaySound(sfx, playerNumber.playerIndex);
 		}
 
 		if (canDoActionB && input.GetPlayerInputAxis("Fire2") )

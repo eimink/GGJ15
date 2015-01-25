@@ -65,7 +65,12 @@
      <Compile Include="Assets\Scripts\ThirdPersonController.cs" />
      <Compile Include="Assets\Scripts\TimeBomb.cs" />
      <Compile Include="Assets\Scripts\Turret.cs" />
+     <Compile Include="Assets\Scripts\UI\Editable3DText.cs" />
+     <Compile Include="Assets\Scripts\UI\MenuFunctions.cs" />
+     <Compile Include="Assets\Scripts\UI\MenuRoot.cs" />
+     <Compile Include="Assets\Scripts\UI\TextLabel.cs" />
      <Compile Include="Assets\Scripts\WallElement.cs" />
+     <Compile Include="Assets\Utilities\CameraTumble.cs" />
      <Compile Include="Assets\Utilities\GeneratorBlock.cs" />
      <Compile Include="Assets\Utilities\PerlinGenerator.cs" />
      <Compile Include="Assets\Utilities\UiClickDetector.cs" />
