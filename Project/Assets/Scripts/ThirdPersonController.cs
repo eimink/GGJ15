@@ -288,7 +288,6 @@ public AnimationClip jumpPoseAnimation;
 			Input.ResetInputAxes();
 		}
 
-		PlayerInput input = GetComponent<PlayerInput> ();
 		if (jumpNow)
 		{
 			lastJumpButtonTime = Time.time;
