@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\DeleteLater.cs" />
      <Compile Include="Assets\Scripts\Energy.cs" />
      <Compile Include="Assets\Scripts\EnergyBar.cs" />
+     <Compile Include="Assets\Scripts\GameStateController.cs" />
      <Compile Include="Assets\Scripts\HealBox.cs" />
      <Compile Include="Assets\Scripts\PlayerCharacterController.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
