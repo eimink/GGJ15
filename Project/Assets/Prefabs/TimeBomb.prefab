@@ -321,9 +321,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8094b60ec153d640936a204186d4577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuseDelay: 2
+  fuseDelay: 1.5
   explosionRadius: 8
-  maxDamage: 30
+  maxDamage: 60
   explosionForce: 1000
   distanceFalloff: .100000001
   explosionTime: .5
