@@ -688,6 +688,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10200028, guid: dffaed0c74321b64d975dbe959e9c441, type: 2}
+      propertyPath: m_Text
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200020, guid: dffaed0c74321b64d975dbe959e9c441, type: 2}
+      propertyPath: m_Text
+      value: meebles
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200024, guid: dffaed0c74321b64d975dbe959e9c441, type: 2}
+      propertyPath: m_Text
+      value: MEEBLES
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dffaed0c74321b64d975dbe959e9c441, type: 2}
   m_RootGameObject: {fileID: 1595210912}
@@ -746,7 +758,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 585855104}
   m_GameObject: {fileID: 659610491}
-  m_Text: <INSERT GAME NAME HERE>
+  m_Text: MEEBLES
   m_OffsetZ: 0
   m_CharacterSize: 1.60000002
   m_LineSpacing: 1
@@ -1569,7 +1581,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 585855104}
   m_GameObject: {fileID: 1886783923}
-  m_Text: helloworld
+  m_Text: meebles
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -1726,7 +1738,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 585855104}
   m_GameObject: {fileID: 1942614932}
-  m_Text: 4
+  m_Text: 8
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
