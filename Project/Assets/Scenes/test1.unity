@@ -1365,15 +1365,15 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 1
-  m_Color: {r: .698529422, g: .73803246, b: 1, a: 1}
-  m_Intensity: .25
+  m_Color: {r: 1, g: .982758641, b: .75, a: 1}
+  m_Intensity: .430000007
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
-    m_Strength: .779999971
+    m_Strength: .5
     m_Bias: .0500000007
     m_Softness: 8
     m_SoftnessFade: 1
