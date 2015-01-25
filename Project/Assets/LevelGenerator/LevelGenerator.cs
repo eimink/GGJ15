@@ -20,6 +20,10 @@ public class LevelGenerator : MonoBehaviour {
 
 	protected void Init() {
 		m_ready = false;
+		if (m_levelParent != null)
+			Destroy (m_levelParent);
+		if (m_levelParent = GameObject.Find("GeneratedLevel") != null)
+			Destroy (m_levelParent);
 		m_levelParent = new GameObject ();
 		m_levelParent.name = "GeneratedLevel";
 	}

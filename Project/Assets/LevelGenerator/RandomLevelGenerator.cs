@@ -29,6 +29,7 @@ public class RandomLevelGenerator : LevelGenerator {
 
 	void GenerateWithSeed(string seed)
 	{
+		Init();
 		UnityEngine.Random.seed = (Convert.ToInt32(seed));
 		xOrg = UnityEngine.Random.Range(-64,64);
 		yOrg = UnityEngine.Random.Range(-64,64);
