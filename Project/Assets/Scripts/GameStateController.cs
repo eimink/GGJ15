@@ -12,6 +12,9 @@ public class GameStateController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if (Input.GetKey (KeyCode.Escape))
+					Application.LoadLevel (0);
+
 		if (frameCount > 10) {
 						if (GameObject.FindGameObjectsWithTag ("Player1").Length == 0) {
 								Debug.Log ("Player2 wins!");

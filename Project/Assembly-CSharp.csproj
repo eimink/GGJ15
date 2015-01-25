@@ -51,6 +51,7 @@
      <Compile Include="Assets\LevelGenerator\RandomLevelGenerator.cs" />
      <Compile Include="Assets\PlayAudio.cs" />
      <Compile Include="Assets\Scripts\AlignToCamera.cs" />
+     <Compile Include="Assets\Scripts\CameraTearEdges.cs" />
      <Compile Include="Assets\Scripts\CharacterMotor.cs" />
      <Compile Include="Assets\Scripts\DeleteLater.cs" />
      <Compile Include="Assets\Scripts\Energy.cs" />
@@ -62,6 +63,7 @@
      <Compile Include="Assets\Scripts\PlayerSpawner.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\ProjectileDamage.cs" />
+     <Compile Include="Assets\Scripts\QuitOnEsc.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonController.cs" />
      <Compile Include="Assets\Scripts\TimeBomb.cs" />
      <Compile Include="Assets\Scripts\Turret.cs" />
