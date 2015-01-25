@@ -8,22 +8,37 @@ public class PlayerCharacterController : MonoBehaviour {
 	public GameObject actionXPrefab;
 	public GameObject actionYPrefab;
 
+	public float actionBCooldownTime = 1.0f;
+	public float actionXCooldownTime = 1.0f;
+	public float actionYCooldownTime = 1.0f;
+	bool canDoActionB = true;
+	bool canDoActionX = true;
+	bool canDoActionY = true;
 
-	
 	public AudioClip healSound;
 	public AudioClip jumpSound;
 
-	public float cooldownTime = 1.0f;
+//	public float cooldownTime = 1.0f;
 
-	bool canDoAction = true;
+//	bool canDoAction = true;
 
 	private PlayerInput input;
 
 	GameObject [] friendlyObjects;
 
-	void ActivateAction()
+	void ActivateActionB()
 	{
-		canDoAction = true;
+		canDoActionB = true;
+	}
+
+	void ActivateActionX()
+	{
+		canDoActionX = true;
+	}
+
+	void ActivateActionY()
+	{
+		canDoActionY = true;
 	}
 
 	void DoTriggerAction(Collider other)
@@ -71,38 +86,35 @@ public class PlayerCharacterController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (canDoAction) 
+		if (input.GetPlayerInputAxis("Fire1"))
 		{
-			if (input.GetPlayerInputAxis("Fire1"))
-			{
-				// hyppy
-				GetComponent<ThirdPersonController>().Jump();
-			}
+			// hyppy
+			GetComponent<ThirdPersonController>().Jump();
+		}
 
-			if (input.GetPlayerInputAxis("Fire2") )
-			{
-				Instantiate (actionBPrefab, GetComponent<Transform> ().position, Quaternion.identity);
-				canDoAction = false;
-				Invoke ("ActivateAction", cooldownTime);
-				PlayerInput playerNumber = (PlayerInput)this.GetComponent("PlayerInput");
-				AudioClip sfx = this.healSound;
-				PlayAudio audioPlayer = (PlayAudio)GameObject.Find("Audio").GetComponent("PlayAudio");
-				audioPlayer.PlaySound(sfx, playerNumber.playerIndex);
-			}
-			if (input.GetPlayerInputAxis("Fire3"))
-			{
-				// pommi = x
-				Instantiate (actionXPrefab, GetComponent<Transform> ().position, Quaternion.identity);
-				canDoAction = false;
-				Invoke ("ActivateAction", cooldownTime);
-			}
-			if (input.GetPlayerInputAxis("Fire4") )
-			{
-				// turretti = y
-				Instantiate (actionYPrefab, GetComponent<Transform> ().position, Quaternion.identity);
-				canDoAction = false;
-				Invoke ("ActivateAction", cooldownTime); 
-			}
+		if (canDoActionB && input.GetPlayerInputAxis("Fire2") )
+		{
+			Instantiate (actionBPrefab, GetComponent<Transform> ().position, Quaternion.identity);
+			canDoActionB = false;
+			Invoke ("ActivateActionB", actionBCooldownTime);
+			PlayerInput playerNumber = (PlayerInput)this.GetComponent("PlayerInput");
+			AudioClip sfx = this.healSound;
+			PlayAudio audioPlayer = (PlayAudio)GameObject.Find("Audio").GetComponent("PlayAudio");
+			audioPlayer.PlaySound(sfx, playerNumber.playerIndex);
+		}
+		if (canDoActionX && input.GetPlayerInputAxis("Fire3"))
+		{
+			// pommi = x
+			Instantiate (actionXPrefab, GetComponent<Transform> ().position, Quaternion.identity);
+			canDoActionX = false;
+			Invoke ("ActivateActionX", actionXCooldownTime);
+		}
+		if (canDoActionY && input.GetPlayerInputAxis("Fire4") )
+		{
+			// turretti = y
+			Instantiate (actionYPrefab, GetComponent<Transform> ().position, Quaternion.identity);
+			canDoActionY = false;
+			Invoke ("ActivateActionY", actionYCooldownTime); 
 		}
 	}
 }

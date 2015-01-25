@@ -1218,7 +1218,7 @@ MonoBehaviour:
   runSpeed: 6
   inAirControlAcceleration: 10
   jumpHeight: 4
-  gravity: 20
+  gravity: 30
   speedSmoothing: 10
   rotateSpeed: 5000
   trotAfterSeconds: 0
@@ -1237,9 +1237,11 @@ MonoBehaviour:
   actionBPrefab: {fileID: 100000, guid: a6cc5fc2a053e9a4287f5907251452fa, type: 2}
   actionXPrefab: {fileID: 100000, guid: c81ccc63de58c1e44a112a8a4d80f1bf, type: 2}
   actionYPrefab: {fileID: 100000, guid: def02296a34e598419a2e5e816ae6335, type: 2}
+  actionBCooldownTime: 10
+  actionXCooldownTime: 1
+  actionYCooldownTime: 20
   healSound: {fileID: 0}
   jumpSound: {fileID: 0}
-  cooldownTime: .5
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

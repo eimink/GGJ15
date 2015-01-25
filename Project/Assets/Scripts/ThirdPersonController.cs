@@ -53,7 +53,7 @@ public class ThirdPersonController : MonoBehaviour {
 	
 	public bool canJump= true;
 	
-	private float jumpRepeatTime = 2.5F;
+	private float jumpRepeatTime = 0.5F;
 	private float jumpTimeout = 0.15F;
 	private float groundedTimeout = 0.25F;
 	
