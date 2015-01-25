@@ -1,17 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public struct textChangeMessageData{
+	public string sender;
+	public string text;
+};
+
 public class Editable3DText : MonoBehaviour {
 
 	bool inEditMode = false;
 	string storedString;
 	TextMesh textComponent;
-	string guiString;
 
 	public Color textColor;
 	public Color activeColor;
 	public MenuRoot mainMenu;
-	
+	public string GetText(){return textComponent.text;}
+		
+	textChangeMessageData msgdata;
+
 	void Start () {
 		if (mainMenu != null)
 		{
@@ -20,7 +27,6 @@ public class Editable3DText : MonoBehaviour {
 		}
 		textComponent = GetComponent<TextMesh> ();
 		storedString = textComponent.text;
-		guiString = storedString;
 		renderer.material.color = textColor;	
 		checkChars();
 	}
@@ -46,6 +52,9 @@ public class Editable3DText : MonoBehaviour {
 		if(textComponent.text.ToCharArray().Length==0) {
 			textComponent.text = "NULL";
 		}
+		msgdata.sender = this.gameObject.name;
+		msgdata.text = textComponent.text
+		mainMenu.SendMessage ("TextChanged", msgdata, SendMessageOptions.DontRequireReceiver);
 	}
 	void startEditing() {
 		Debug.Log ("to edit mode");
