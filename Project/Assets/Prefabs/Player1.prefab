@@ -1160,11 +1160,11 @@ MonoBehaviour:
   actionBPrefab: {fileID: 100000, guid: a6cc5fc2a053e9a4287f5907251452fa, type: 2}
   actionXPrefab: {fileID: 100000, guid: c81ccc63de58c1e44a112a8a4d80f1bf, type: 2}
   actionYPrefab: {fileID: 100000, guid: def02296a34e598419a2e5e816ae6335, type: 2}
-  actionBCooldownTime: 10
+  actionBCooldownTime: 3
   actionXCooldownTime: 1
-  actionYCooldownTime: 20
+  actionYCooldownTime: 6
   healSound: {fileID: 8300000, guid: 430adaf004691274baf6b4a506e6313b, type: 3}
-  jumpSound: {fileID: 0}
+  jumpSound: {fileID: 8300000, guid: 31f10953457908e4682e6339474886cd, type: 3}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1533,7 +1533,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4278190247
+        rgba: 4280032359
       minMaxState: 0
     startSize:
       scalar: .150000006
@@ -1738,13 +1738,13 @@ ParticleSystem:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 4278190246
+          rgba: 4280032359
         key1:
           serializedVersion: 2
           rgba: 16777215
         key2:
           serializedVersion: 2
-          rgba: 0
+          rgba: 218103808
         key3:
           serializedVersion: 2
           rgba: 0
@@ -1768,16 +1768,16 @@ ParticleSystem:
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 43562
-        atime1: 65535
-        atime2: 0
+        atime0: 18890
+        atime1: 25443
+        atime2: 65535
         atime3: 0
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 3
       minGradient:
         key0:
           serializedVersion: 2
