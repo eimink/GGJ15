@@ -13,8 +13,13 @@ public class Turret : MonoBehaviour {
 
 	public GameObject turretObject;
 
+
 	string myPlayer;
 	string otherPlayer;
+
+	public GameObject light;
+	public Vector3 projectileOffset;
+
 	// Use this for initialization
 	void Start () {
 		GameObject [] objects1 = GameObject.FindGameObjectsWithTag("Player1");
@@ -45,6 +50,9 @@ public class Turret : MonoBehaviour {
 
 		InvokeRepeating("Fire", activationDelay, timeBetweenShots);
 		Invoke("Destroy", activityDuration);
+		
+	
+		light.SetActive(false);
 	}
 
 	bool Shoot(string tag)
@@ -57,13 +65,19 @@ public class Turret : MonoBehaviour {
 			if( delta.magnitude <= range )
 			{
 				turretObject.transform.LookAt(objects[i].GetComponent<Transform>().position);
-				Instantiate(projectile,turretObject.transform.position,turretObject.transform.rotation);
+				Instantiate(projectile,turretObject.transform.position + turretObject.transform.rotation*projectileOffset,turretObject.transform.rotation);
 				
 				return true;
 			}
 		}
 
 		return false;
+	}
+
+	void TurnOffLight()
+	{
+		
+		light.SetActive(false);
 	}
 
 	void Fire()
@@ -76,7 +90,9 @@ public class Turret : MonoBehaviour {
 				return;
 			}
 		}
-
+		
+		light.SetActive(true);
+		Invoke("TurnOffLight", 0.1f);
 		GetComponentInChildren<ParticleSystem>().Play();
 	}
 	
